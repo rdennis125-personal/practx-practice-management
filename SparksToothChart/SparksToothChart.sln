@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35431.28
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SparksToothChart", "SparksToothChart.csproj", "{033B77F4-2E98-49A7-901F-5F388DEDF83E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestForm", "TestForm\TestForm.csproj", "{7E39A2FB-3091-45B3-937E-4E549CADBF4F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{033B77F4-2E98-49A7-901F-5F388DEDF83E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{033B77F4-2E98-49A7-901F-5F388DEDF83E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{033B77F4-2E98-49A7-901F-5F388DEDF83E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{033B77F4-2E98-49A7-901F-5F388DEDF83E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E39A2FB-3091-45B3-937E-4E549CADBF4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E39A2FB-3091-45B3-937E-4E549CADBF4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E39A2FB-3091-45B3-937E-4E549CADBF4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E39A2FB-3091-45B3-937E-4E549CADBF4F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CE05AA28-EF74-4F5A-872C-5B167381F666}
+	EndGlobalSection
+EndGlobal

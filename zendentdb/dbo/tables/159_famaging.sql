@@ -1,0 +1,9 @@
+CREATE TABLE [famaging] ( [PatNum] bigint NOT NULL IDENTITY(1,1),
+[Bal_0_30] FLOAT(53) NOT NULL,
+[Bal_31_60] FLOAT(53) NOT NULL,
+[Bal_61_90] FLOAT(53) NOT NULL,
+[BalOver90] FLOAT(53) NOT NULL,
+[InsEst] FLOAT(53) NOT NULL,
+[BalTotal] FLOAT(53) NOT NULL,
+[PayPlanDue] FLOAT(53) NOT NULL,
+CONSTRAINT PK_famaging_PatNum PRIMARY KEY ([PatNum]) );

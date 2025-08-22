@@ -1,0 +1,11 @@
+CREATE TABLE [medlabfacility] ( [MedLabFacilityNum] bigint NOT NULL IDENTITY(1,1),
+[FacilityName] varchar(255) NOT NULL,
+[Address] varchar(255) NOT NULL,
+[City] varchar(255) NOT NULL,
+[State] varchar(255) NOT NULL,
+[Zip] varchar(255) NOT NULL,
+[Phone] varchar(255) NOT NULL,
+[DirectorTitle] varchar(255) NOT NULL,
+[DirectorLName] varchar(255) NOT NULL,
+[DirectorFName] varchar(255) NOT NULL,
+CONSTRAINT PK_MedLabFacilityNum PRIMARY KEY ([MedLabFacilityNum]) );
