@@ -1,0 +1,64 @@
+pr:
+  branches:
+    include:
+      - main
+  paths:
+    include:
+      - bicep/*
+      - scripts/*
+      - pipelines/zendent-infra-deploy.yml
+
+trigger:
+  branches:
+    include:
+      - main
+  paths:
+    include:
+      - bicep/*
+      - scripts/*
+      - pipelines/zendent-infra-deploy.yml
+
+
+variables:
+- group: zendent-shared
+- group: zendent-secrets
+
+pool:
+  vmImage: 'windows-latest'
+
+stages:
+  - stage: DeployVM
+    displayName: 'Deploy ZenDent Dev VM'
+    jobs:
+      - job: DeployWithBicep
+        displayName: 'Deploy Infrastructure with Bicep'
+        steps:
+
+          - task: PowerShell@2
+            displayName: '📄 Stage setup script for Bicep deployment'
+            inputs:
+              targetType: 'inline'
+              script: |
+                Copy-Item -Path 'scripts/zendent-vm-setup.ps1' -Destination 'bicep/' -Force
+
+          - task: AzureCLI@2
+            displayName: '🚀 Deploy ZenDent VM via Bicep Template'
+            inputs:
+              azureSubscription: 'zendent-azure-devops-connection'  # <-- literal name of your service connection
+              scriptType: ps
+              scriptLocation: inlineScript
+              inlineScript: |
+                az deployment group create `
+                  --resource-group $(resourceGroup) `
+                  --template-file bicep/zendent-dev-vm.bicep `
+                  --parameters `
+                    adminUsername='zendentadmin' `
+                    adminPassword="$(adminPassword)" `
+                    vmName="$(VMNAME2)" `
+                    location="$(LOCATION)" `
+                    vmSize="$(VMSIZE)" `
+                    imageSku="$(IMAGESKU)" `
+                    tagUseCase="$(TAGUSECASE)" `
+                    tagPrimaryPurpose="$(TAGPRIMARYPURPOSE)" `
+                    vnetAddressPrefix="$(VNETADDRESSPREFIX)" `
+                    subnetPrefix="$(SUBNETPREFIX)"

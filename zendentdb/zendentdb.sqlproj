@@ -1,0 +1,469 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>zendentdb</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{efd410c1-af21-40d1-b3c1-35fdc1e796c9}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.SqlAzureV12DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>zendentdb</RootNamespace>
+    <AssemblyName>zendentdb</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="schemas" />
+    <Folder Include="dbo" />
+    <Folder Include="dbo\tables" />
+    <Folder Include="dbo\procedures" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\tables\001_account.sql" />
+    <Build Include="dbo\tables\002_accountingautopay.sql" />
+    <Build Include="dbo\tables\003_activeinstance.sql" />
+    <Build Include="dbo\tables\004_adjustment.sql" />
+    <Build Include="dbo\tables\005_alertcategory.sql" />
+    <Build Include="dbo\tables\006_alertcategorylink.sql" />
+    <Build Include="dbo\tables\007_alertitem.sql" />
+    <Build Include="dbo\tables\008_alertread.sql" />
+    <Build Include="dbo\tables\009_alertsub.sql" />
+    <Build Include="dbo\tables\010_allergy.sql" />
+    <Build Include="dbo\tables\011_allergydef.sql" />
+    <Build Include="dbo\tables\012_apikey.sql" />
+    <Build Include="dbo\tables\013_apisubscription.sql" />
+    <Build Include="dbo\tables\014_appointment.sql" />
+    <Build Include="dbo\tables\015_appointmentrule.sql" />
+    <Build Include="dbo\tables\016_appointmenttype.sql" />
+    <Build Include="dbo\tables\017_apptfield.sql" />
+    <Build Include="dbo\tables\018_apptfielddef.sql" />
+    <Build Include="dbo\tables\019_apptgeneralmessagesent.sql" />
+    <Build Include="dbo\tables\020_apptnewpatthankyousent.sql" />
+    <Build Include="dbo\tables\021_apptreminderrule.sql" />
+    <Build Include="dbo\tables\022_apptremindersent.sql" />
+    <Build Include="dbo\tables\023_apptthankyousent.sql" />
+    <Build Include="dbo\tables\024_apptview.sql" />
+    <Build Include="dbo\tables\025_apptviewitem.sql" />
+    <Build Include="dbo\tables\026_asapcomm.sql" />
+    <Build Include="dbo\tables\027_autocode.sql" />
+    <Build Include="dbo\tables\028_autocodecond.sql" />
+    <Build Include="dbo\tables\029_autocodeitem.sql" />
+    <Build Include="dbo\tables\030_autocommexcludedate.sql" />
+    <Build Include="dbo\tables\031_automation.sql" />
+    <Build Include="dbo\tables\032_automationcondition.sql" />
+    <Build Include="dbo\tables\033_autonote.sql" />
+    <Build Include="dbo\tables\034_autonotecontrol.sql" />
+    <Build Include="dbo\tables\035_benefit.sql" />
+    <Build Include="dbo\tables\036_canadiannetwork.sql" />
+    <Build Include="dbo\tables\037_carecreditwebresponse.sql" />
+    <Build Include="dbo\tables\038_carrier.sql" />
+    <Build Include="dbo\tables\039_cdcrec.sql" />
+    <Build Include="dbo\tables\040_cdspermission.sql" />
+    <Build Include="dbo\tables\041_centralconnection.sql" />
+    <Build Include="dbo\tables\042_cert.sql" />
+    <Build Include="dbo\tables\043_certemployee.sql" />
+    <Build Include="dbo\tables\044_chartview.sql" />
+    <Build Include="dbo\tables\045_claim.sql" />
+    <Build Include="dbo\tables\046_claimattach.sql" />
+    <Build Include="dbo\tables\047_claimcondcodelog.sql" />
+    <Build Include="dbo\tables\048_claimform.sql" />
+    <Build Include="dbo\tables\049_claimformitem.sql" />
+    <Build Include="dbo\tables\050_claimpayment.sql" />
+    <Build Include="dbo\tables\051_claimproc.sql" />
+    <Build Include="dbo\tables\052_claimsnapshot.sql" />
+    <Build Include="dbo\tables\053_claimtracking.sql" />
+    <Build Include="dbo\tables\054_claimvalcodelog.sql" />
+    <Build Include="dbo\tables\055_clearinghouse.sql" />
+    <Build Include="dbo\tables\056_clinic.sql" />
+    <Build Include="dbo\tables\057_clinicerx.sql" />
+    <Build Include="dbo\tables\058_clinicpref.sql" />
+    <Build Include="dbo\tables\059_clockevent.sql" />
+    <Build Include="dbo\tables\060_cloudaddress.sql" />
+    <Build Include="dbo\tables\061_codegroup.sql" />
+    <Build Include="dbo\tables\062_codesystem.sql" />
+    <Build Include="dbo\tables\063_commlog.sql" />
+    <Build Include="dbo\tables\064_commoptout.sql" />
+    <Build Include="dbo\tables\065_computer.sql" />
+    <Build Include="dbo\tables\066_computerpref.sql" />
+    <Build Include="dbo\tables\067_confirmationrequest.sql" />
+    <Build Include="dbo\tables\068_connectiongroup.sql" />
+    <Build Include="dbo\tables\069_conngroupattach.sql" />
+    <Build Include="dbo\tables\070_contact.sql" />
+    <Build Include="dbo\tables\071_county.sql" />
+    <Build Include="dbo\tables\072_covcat.sql" />
+    <Build Include="dbo\tables\073_covspan.sql" />
+    <Build Include="dbo\tables\074_cpt.sql" />
+    <Build Include="dbo\tables\075_creditcard.sql" />
+    <Build Include="dbo\tables\076_custrefentry.sql" />
+    <Build Include="dbo\tables\077_custreference.sql" />
+    <Build Include="dbo\tables\078_cvx.sql" />
+    <Build Include="dbo\tables\079_dashboardar.sql" />
+    <Build Include="dbo\tables\080_dashboardcell.sql" />
+    <Build Include="dbo\tables\081_dashboardlayout.sql" />
+    <Build Include="dbo\tables\082_databasemaintenance.sql" />
+    <Build Include="dbo\tables\083_dbmlog.sql" />
+    <Build Include="dbo\tables\084_definition.sql" />
+    <Build Include="dbo\tables\085_deflink.sql" />
+    <Build Include="dbo\tables\086_deletedobject.sql" />
+    <Build Include="dbo\tables\087_deposit.sql" />
+    <Build Include="dbo\tables\088_dictcustom.sql" />
+    <Build Include="dbo\tables\089_discountplan.sql" />
+    <Build Include="dbo\tables\090_discountplansub.sql" />
+    <Build Include="dbo\tables\091_disease.sql" />
+    <Build Include="dbo\tables\092_diseasedef.sql" />
+    <Build Include="dbo\tables\093_displayfield.sql" />
+    <Build Include="dbo\tables\094_displayreport.sql" />
+    <Build Include="dbo\tables\095_dispsupply.sql" />
+    <Build Include="dbo\tables\096_document.sql" />
+    <Build Include="dbo\tables\097_documentmisc.sql" />
+    <Build Include="dbo\tables\098_drugmanufacturer.sql" />
+    <Build Include="dbo\tables\099_drugunit.sql" />
+    <Build Include="dbo\tables\100_dunning.sql" />
+    <Build Include="dbo\tables\101_ebill.sql" />
+    <Build Include="dbo\tables\102_eclipboardimagecapture.sql" />
+    <Build Include="dbo\tables\103_eclipboardimagecapturedef.sql" />
+    <Build Include="dbo\tables\104_eclipboardsheetdef.sql" />
+    <Build Include="dbo\tables\105_eduresource.sql" />
+    <Build Include="dbo\tables\106_ehramendment.sql" />
+    <Build Include="dbo\tables\107_ehraptobs.sql" />
+    <Build Include="dbo\tables\108_ehrcareplan.sql" />
+    <Build Include="dbo\tables\109_ehrlab.sql" />
+    <Build Include="dbo\tables\110_ehrlabclinicalinfo.sql" />
+    <Build Include="dbo\tables\111_ehrlabimage.sql" />
+    <Build Include="dbo\tables\112_ehrlabnote.sql" />
+    <Build Include="dbo\tables\113_ehrlabresult.sql" />
+    <Build Include="dbo\tables\114_ehrlabresultscopyto.sql" />
+    <Build Include="dbo\tables\115_ehrlabspecimen.sql" />
+    <Build Include="dbo\tables\116_ehrlabspecimencondition.sql" />
+    <Build Include="dbo\tables\117_ehrlabspecimenrejectreason.sql" />
+    <Build Include="dbo\tables\118_ehrmeasure.sql" />
+    <Build Include="dbo\tables\119_ehrmeasureevent.sql" />
+    <Build Include="dbo\tables\120_ehrnotperformed.sql" />
+    <Build Include="dbo\tables\121_ehrpatient.sql" />
+    <Build Include="dbo\tables\122_ehrprovkey.sql" />
+    <Build Include="dbo\tables\123_ehrquarterlykey.sql" />
+    <Build Include="dbo\tables\124_ehrsummaryccd.sql" />
+    <Build Include="dbo\tables\125_ehrtrigger.sql" />
+    <Build Include="dbo\tables\126_electid.sql" />
+    <Build Include="dbo\tables\127_emailaddress.sql" />
+    <Build Include="dbo\tables\128_emailattach.sql" />
+    <Build Include="dbo\tables\129_emailautograph.sql" />
+    <Build Include="dbo\tables\130_emailhostingtemplate.sql" />
+    <Build Include="dbo\tables\131_emailmessage.sql" />
+    <Build Include="dbo\tables\132_emailmessageuid.sql" />
+    <Build Include="dbo\tables\133_emailsecure.sql" />
+    <Build Include="dbo\tables\134_emailsecureattach.sql" />
+    <Build Include="dbo\tables\135_emailtemplate.sql" />
+    <Build Include="dbo\tables\136_employee.sql" />
+    <Build Include="dbo\tables\137_employer.sql" />
+    <Build Include="dbo\tables\138_encounter.sql" />
+    <Build Include="dbo\tables\139_entrylog.sql" />
+    <Build Include="dbo\tables\140_eobattach.sql" />
+    <Build Include="dbo\tables\141_equipment.sql" />
+    <Build Include="dbo\tables\142_erouting.sql" />
+    <Build Include="dbo\tables\143_eroutingaction.sql" />
+    <Build Include="dbo\tables\144_eroutingactiondef.sql" />
+    <Build Include="dbo\tables\145_eroutingdef.sql" />
+    <Build Include="dbo\tables\146_eroutingdeflink.sql" />
+    <Build Include="dbo\tables\147_erxlog.sql" />
+    <Build Include="dbo\tables\148_eservicelog.sql" />
+    <Build Include="dbo\tables\149_eserviceshortguid.sql" />
+    <Build Include="dbo\tables\150_eservicesignal.sql" />
+    <Build Include="dbo\tables\151_etrans.sql" />
+    <Build Include="dbo\tables\152_etrans835.sql" />
+    <Build Include="dbo\tables\153_etrans835attach.sql" />
+    <Build Include="dbo\tables\154_etransmessagetext.sql" />
+    <Build Include="dbo\tables\155_evaluation.sql" />
+    <Build Include="dbo\tables\156_evaluationcriterion.sql" />
+    <Build Include="dbo\tables\157_evaluationcriteriondef.sql" />
+    <Build Include="dbo\tables\158_evaluationdef.sql" />
+    <Build Include="dbo\tables\159_famaging.sql" />
+    <Build Include="dbo\tables\160_familyhealth.sql" />
+    <Build Include="dbo\tables\161_fee.sql" />
+    <Build Include="dbo\tables\162_feesched.sql" />
+    <Build Include="dbo\tables\163_feeschedgroup.sql" />
+    <Build Include="dbo\tables\164_fhircontactpoint.sql" />
+    <Build Include="dbo\tables\165_fhirsubscription.sql" />
+    <Build Include="dbo\tables\166_fielddeflink.sql" />
+    <Build Include="dbo\tables\167_formpat.sql" />
+    <Build Include="dbo\tables\168_gradingscale.sql" />
+    <Build Include="dbo\tables\169_gradingscaleitem.sql" />
+    <Build Include="dbo\tables\170_grouppermission.sql" />
+    <Build Include="dbo\tables\171_guardian.sql" />
+    <Build Include="dbo\tables\172_hcpcs.sql" />
+    <Build Include="dbo\tables\173_hieclinic.sql" />
+    <Build Include="dbo\tables\174_hiequeue.sql" />
+    <Build Include="dbo\tables\175_histappointment.sql" />
+    <Build Include="dbo\tables\176_hl7def.sql" />
+    <Build Include="dbo\tables\177_hl7deffield.sql" />
+    <Build Include="dbo\tables\178_hl7defmessage.sql" />
+    <Build Include="dbo\tables\179_hl7defsegment.sql" />
+    <Build Include="dbo\tables\180_hl7msg.sql" />
+    <Build Include="dbo\tables\181_hl7procattach.sql" />
+    <Build Include="dbo\tables\182_icd10.sql" />
+    <Build Include="dbo\tables\183_icd9.sql" />
+    <Build Include="dbo\tables\184_imagedraw.sql" />
+    <Build Include="dbo\tables\185_imagingdevice.sql" />
+    <Build Include="dbo\tables\186_insbluebook.sql" />
+    <Build Include="dbo\tables\187_insbluebooklog.sql" />
+    <Build Include="dbo\tables\188_insbluebookrule.sql" />
+    <Build Include="dbo\tables\189_inseditlog.sql" />
+    <Build Include="dbo\tables\190_inseditpatlog.sql" />
+    <Build Include="dbo\tables\191_insfilingcode.sql" />
+    <Build Include="dbo\tables\192_insfilingcodesubtype.sql" />
+    <Build Include="dbo\tables\193_insplan.sql" />
+    <Build Include="dbo\tables\194_insplanpreference.sql" />
+    <Build Include="dbo\tables\195_inssub.sql" />
+    <Build Include="dbo\tables\196_installmentplan.sql" />
+    <Build Include="dbo\tables\197_insverify.sql" />
+    <Build Include="dbo\tables\198_insverifyhist.sql" />
+    <Build Include="dbo\tables\199_intervention.sql" />
+    <Build Include="dbo\tables\200_journalentry.sql" />
+    <Build Include="dbo\tables\201_labcase.sql" />
+    <Build Include="dbo\tables\202_laboratory.sql" />
+    <Build Include="dbo\tables\203_labpanel.sql" />
+    <Build Include="dbo\tables\204_labresult.sql" />
+    <Build Include="dbo\tables\205_labturnaround.sql" />
+    <Build Include="dbo\tables\206_language.sql" />
+    <Build Include="dbo\tables\207_languageforeign.sql" />
+    <Build Include="dbo\tables\208_letter.sql" />
+    <Build Include="dbo\tables\209_lettermerge.sql" />
+    <Build Include="dbo\tables\210_lettermergefield.sql" />
+    <Build Include="dbo\tables\211_limitedbetafeature.sql" />
+    <Build Include="dbo\tables\212_loginattempt.sql" />
+    <Build Include="dbo\tables\213_loinc.sql" />
+    <Build Include="dbo\tables\214_medicalorder.sql" />
+    <Build Include="dbo\tables\215_medication.sql" />
+    <Build Include="dbo\tables\216_medicationpat.sql" />
+    <Build Include="dbo\tables\217_medlab.sql" />
+    <Build Include="dbo\tables\218_medlabfacattach.sql" />
+    <Build Include="dbo\tables\219_medlabfacility.sql" />
+    <Build Include="dbo\tables\220_medlabresult.sql" />
+    <Build Include="dbo\tables\221_medlabspecimen.sql" />
+    <Build Include="dbo\tables\222_mobileappdevice.sql" />
+    <Build Include="dbo\tables\223_mobilebrandingprofile.sql" />
+    <Build Include="dbo\tables\224_mobiledatabyte.sql" />
+    <Build Include="dbo\tables\225_mobilenotification.sql" />
+    <Build Include="dbo\tables\226_mount.sql" />
+    <Build Include="dbo\tables\227_mountdef.sql" />
+    <Build Include="dbo\tables\228_mountitem.sql" />
+    <Build Include="dbo\tables\229_mountitemdef.sql" />
+    <Build Include="dbo\tables\230_msgtopaysent.sql" />
+    <Build Include="dbo\tables\231_oidexternal.sql" />
+    <Build Include="dbo\tables\232_oidinternal.sql" />
+    <Build Include="dbo\tables\233_operatory.sql" />
+    <Build Include="dbo\tables\234_orionproc.sql" />
+    <Build Include="dbo\tables\235_orthocase.sql" />
+    <Build Include="dbo\tables\236_orthochart.sql" />
+    <Build Include="dbo\tables\237_orthochartlog.sql" />
+    <Build Include="dbo\tables\238_orthochartrow.sql" />
+    <Build Include="dbo\tables\239_orthocharttab.sql" />
+    <Build Include="dbo\tables\240_orthocharttablink.sql" />
+    <Build Include="dbo\tables\241_orthohardware.sql" />
+    <Build Include="dbo\tables\242_orthohardwarespec.sql" />
+    <Build Include="dbo\tables\243_orthoplanlink.sql" />
+    <Build Include="dbo\tables\244_orthoproclink.sql" />
+    <Build Include="dbo\tables\245_orthorx.sql" />
+    <Build Include="dbo\tables\246_orthoschedule.sql" />
+    <Build Include="dbo\tables\247_patfield.sql" />
+    <Build Include="dbo\tables\248_patfielddef.sql" />
+    <Build Include="dbo\tables\249_patfieldpickitem.sql" />
+    <Build Include="dbo\tables\250_patient.sql" />
+    <Build Include="dbo\tables\251_patientlink.sql" />
+    <Build Include="dbo\tables\252_patientnote.sql" />
+    <Build Include="dbo\tables\253_patientportalinvite.sql" />
+    <Build Include="dbo\tables\254_patientrace.sql" />
+    <Build Include="dbo\tables\255_patplan.sql" />
+    <Build Include="dbo\tables\256_patrestriction.sql" />
+    <Build Include="dbo\tables\257_payconnectresponseweb.sql" />
+    <Build Include="dbo\tables\258_payment.sql" />
+    <Build Include="dbo\tables\259_payortype.sql" />
+    <Build Include="dbo\tables\260_payperiod.sql" />
+    <Build Include="dbo\tables\261_payplan.sql" />
+    <Build Include="dbo\tables\262_payplancharge.sql" />
+    <Build Include="dbo\tables\263_payplanlink.sql" />
+    <Build Include="dbo\tables\264_payplantemplate.sql" />
+    <Build Include="dbo\tables\265_paysplit.sql" />
+    <Build Include="dbo\tables\266_payterminal.sql" />
+    <Build Include="dbo\tables\267_perioexam.sql" />
+    <Build Include="dbo\tables\268_periomeasure.sql" />
+    <Build Include="dbo\tables\269_pharmacy.sql" />
+    <Build Include="dbo\tables\270_pharmclinic.sql" />
+    <Build Include="dbo\tables\271_phonenumber.sql" />
+    <Build Include="dbo\tables\272_plannedappt.sql" />
+    <Build Include="dbo\tables\273_popup.sql" />
+    <Build Include="dbo\tables\274_preference.sql" />
+    <Build Include="dbo\tables\275_printer.sql" />
+    <Build Include="dbo\tables\276_procapptcolor.sql" />
+    <Build Include="dbo\tables\277_procbutton.sql" />
+    <Build Include="dbo\tables\278_procbuttonitem.sql" />
+    <Build Include="dbo\tables\279_procbuttonquick.sql" />
+    <Build Include="dbo\tables\280_proccodenote.sql" />
+    <Build Include="dbo\tables\281_procedurecode.sql" />
+    <Build Include="dbo\tables\282_procedurelog.sql" />
+    <Build Include="dbo\tables\283_procgroupitem.sql" />
+    <Build Include="dbo\tables\284_procmultivisit.sql" />
+    <Build Include="dbo\tables\285_procnote.sql" />
+    <Build Include="dbo\tables\286_proctp.sql" />
+    <Build Include="dbo\tables\287_program.sql" />
+    <Build Include="dbo\tables\288_programproperty.sql" />
+    <Build Include="dbo\tables\289_promotion.sql" />
+    <Build Include="dbo\tables\290_promotionlog.sql" />
+    <Build Include="dbo\tables\291_provider.sql" />
+    <Build Include="dbo\tables\292_providerclinic.sql" />
+    <Build Include="dbo\tables\293_providercliniclink.sql" />
+    <Build Include="dbo\tables\294_providererx.sql" />
+    <Build Include="dbo\tables\295_providerident.sql" />
+    <Build Include="dbo\tables\296_question.sql" />
+    <Build Include="dbo\tables\297_questiondef.sql" />
+    <Build Include="dbo\tables\298_quickpastecat.sql" />
+    <Build Include="dbo\tables\299_quickpastenote.sql" />
+    <Build Include="dbo\tables\300_reactivation.sql" />
+    <Build Include="dbo\tables\301_recall.sql" />
+    <Build Include="dbo\tables\302_recalltrigger.sql" />
+    <Build Include="dbo\tables\303_recalltype.sql" />
+    <Build Include="dbo\tables\304_reconcile.sql" />
+    <Build Include="dbo\tables\305_recurringcharge.sql" />
+    <Build Include="dbo\tables\306_refattach.sql" />
+    <Build Include="dbo\tables\307_referral.sql" />
+    <Build Include="dbo\tables\308_referralcliniclink.sql" />
+    <Build Include="dbo\tables\309_registrationkey.sql" />
+    <Build Include="dbo\tables\310_reminderrule.sql" />
+    <Build Include="dbo\tables\311_repeatcharge.sql" />
+    <Build Include="dbo\tables\312_replicationserver.sql" />
+    <Build Include="dbo\tables\313_reqneeded.sql" />
+    <Build Include="dbo\tables\314_reqstudent.sql" />
+    <Build Include="dbo\tables\315_requiredfield.sql" />
+    <Build Include="dbo\tables\316_requiredfieldcondition.sql" />
+    <Build Include="dbo\tables\317_rxalert.sql" />
+    <Build Include="dbo\tables\318_rxdef.sql" />
+    <Build Include="dbo\tables\319_rxnorm.sql" />
+    <Build Include="dbo\tables\320_rxpat.sql" />
+    <Build Include="dbo\tables\321_schedule.sql" />
+    <Build Include="dbo\tables\322_scheduledprocess.sql" />
+    <Build Include="dbo\tables\323_scheduleop.sql" />
+    <Build Include="dbo\tables\324_schoolclass.sql" />
+    <Build Include="dbo\tables\325_schoolcourse.sql" />
+    <Build Include="dbo\tables\326_screen.sql" />
+    <Build Include="dbo\tables\327_screengroup.sql" />
+    <Build Include="dbo\tables\328_screenpat.sql" />
+    <Build Include="dbo\tables\329_securitylog.sql" />
+    <Build Include="dbo\tables\330_securityloghash.sql" />
+    <Build Include="dbo\tables\331_sessiontoken.sql" />
+    <Build Include="dbo\tables\332_sheet.sql" />
+    <Build Include="dbo\tables\333_sheetdef.sql" />
+    <Build Include="dbo\tables\334_sheetfield.sql" />
+    <Build Include="dbo\tables\335_sheetfielddef.sql" />
+    <Build Include="dbo\tables\336_sigbutdef.sql" />
+    <Build Include="dbo\tables\337_sigelementdef.sql" />
+    <Build Include="dbo\tables\338_sigmessage.sql" />
+    <Build Include="dbo\tables\339_signalod.sql" />
+    <Build Include="dbo\tables\340_site.sql" />
+    <Build Include="dbo\tables\341_smsblockphone.sql" />
+    <Build Include="dbo\tables\342_smsfrommobile.sql" />
+    <Build Include="dbo\tables\343_smsphone.sql" />
+    <Build Include="dbo\tables\344_smstomobile.sql" />
+    <Build Include="dbo\tables\345_snomed.sql" />
+    <Build Include="dbo\tables\346_sop.sql" />
+    <Build Include="dbo\tables\347_stateabbr.sql" />
+    <Build Include="dbo\tables\348_statement.sql" />
+    <Build Include="dbo\tables\349_statementprod.sql" />
+    <Build Include="dbo\tables\350_stmtlink.sql" />
+    <Build Include="dbo\tables\351_substitutionlink.sql" />
+    <Build Include="dbo\tables\352_supplier.sql" />
+    <Build Include="dbo\tables\353_supply.sql" />
+    <Build Include="dbo\tables\354_supplyneeded.sql" />
+    <Build Include="dbo\tables\355_supplyorder.sql" />
+    <Build Include="dbo\tables\356_supplyorderitem.sql" />
+    <Build Include="dbo\tables\357_task.sql" />
+    <Build Include="dbo\tables\358_taskancestor.sql" />
+    <Build Include="dbo\tables\359_taskattachment.sql" />
+    <Build Include="dbo\tables\360_taskhist.sql" />
+    <Build Include="dbo\tables\361_tasklist.sql" />
+    <Build Include="dbo\tables\362_tasknote.sql" />
+    <Build Include="dbo\tables\363_tasksubscription.sql" />
+    <Build Include="dbo\tables\364_taskunread.sql" />
+    <Build Include="dbo\tables\365_terminalactive.sql" />
+    <Build Include="dbo\tables\366_timeadjust.sql" />
+    <Build Include="dbo\tables\367_timecardrule.sql" />
+    <Build Include="dbo\tables\368_toolbutitem.sql" />
+    <Build Include="dbo\tables\369_toothgridcell.sql" />
+    <Build Include="dbo\tables\370_toothgridcol.sql" />
+    <Build Include="dbo\tables\371_toothgriddef.sql" />
+    <Build Include="dbo\tables\372_toothinitial.sql" />
+    <Build Include="dbo\tables\373_transaction.sql" />
+    <Build Include="dbo\tables\374_transactioninvoice.sql" />
+    <Build Include="dbo\tables\375_treatplan.sql" />
+    <Build Include="dbo\tables\376_treatplanattach.sql" />
+    <Build Include="dbo\tables\377_treatplanparam.sql" />
+    <Build Include="dbo\tables\378_tsitranslog.sql" />
+    <Build Include="dbo\tables\379_ucum.sql" />
+    <Build Include="dbo\tables\380_updatehistory.sql" />
+    <Build Include="dbo\tables\381_userclinic.sql" />
+    <Build Include="dbo\tables\382_usergroup.sql" />
+    <Build Include="dbo\tables\383_usergroupattach.sql" />
+    <Build Include="dbo\tables\384_userod.sql" />
+    <Build Include="dbo\tables\385_userodapptview.sql" />
+    <Build Include="dbo\tables\386_userodpref.sql" />
+    <Build Include="dbo\tables\387_userquery.sql" />
+    <Build Include="dbo\tables\388_userweb.sql" />
+    <Build Include="dbo\tables\389_utm.sql" />
+    <Build Include="dbo\tables\390_vaccinedef.sql" />
+    <Build Include="dbo\tables\391_vaccineobs.sql" />
+    <Build Include="dbo\tables\392_vaccinepat.sql" />
+    <Build Include="dbo\tables\393_vitalsign.sql" />
+    <Build Include="dbo\tables\394_webschedcarrierrule.sql" />
+    <Build Include="dbo\tables\395_webschedrecall.sql" />
+    <Build Include="dbo\tables\396_wikilistheaderwidth.sql" />
+    <Build Include="dbo\tables\397_wikilisthist.sql" />
+    <Build Include="dbo\tables\398_wikipage.sql" />
+    <Build Include="dbo\tables\399_wikipagehist.sql" />
+    <Build Include="dbo\tables\400_xchargetransaction.sql" />
+    <Build Include="dbo\tables\401_xwebresponse.sql" />
+    <Build Include="dbo\tables\402_zipcode.sql" />
+    <Build Include="dbo\procedures\usp_bulk_seed_identities.sql" />
+  </ItemGroup>
+</Project>

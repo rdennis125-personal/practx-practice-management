@@ -1,5 +1,224 @@
 ﻿################################################################################
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
+# Build results
+bin/
+obj/
 
-/.vs
+# User-specific files
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+
+# Visual Studio Code workspace settings
+.vscode/
+
+# Visual Studio local history and cache
+.vs/
+
+# Rider project files
+.idea/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Auto-generated files
+Generated_Code/
+
+# NuGet packages
+*.nupkg
+packages/
+# Uncomment if using package restore
+# !packages/build/
+
+# dotCover
+*.dotCover
+
+# NCrunch
+*.ncrunch*
+.*crunch*.local.xml
+
+# Azure deployment files
+PublishProfiles/
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Windows shortcut files
+*.lnk
+
+# Others
+*.log
+*.tlog
+*.cache
+*.tmp
+
+# JetBrains Rider
+.idea/
+
+# Resharper
+_ReSharper*/
+*.DotSettings.user
+
+# Logs
+logs/
+*.log
+
+# Temporary files
+~$*
+
+# Entity Framework Migrations
+Migrations/
+
+# Backup & crash dumps
+*.bak
+*.dmp
+
+# Local secrets
+secrets.json
+
+# Test results
+TestResults/
+*.trx
+
+# Local development artifacts
+*.db
+*.sqlite
+*.pdb
+
+# Ignore environment settings
+.env
+.env.*
+
+# Ignore coverage reports
+coverage/
+coverage*.json
+lcov.info
+/PluginExample/obj/Debug/PluginExample.csproj.AssemblyReference.cache
+/PluginExample/obj/Release/PluginExample.csproj.AssemblyReference.cache
+/PluginExample/obj/x86/Debug/PluginExample.csproj.AssemblyReference.cache
+/PluginExample/obj/x86/Release/PluginExample.csproj.AssemblyReference.cache
+/ServiceManager/obj/Debug/ServiceManager.csproj.AssemblyReference.cache
+/ServiceManager/obj/Release/ServiceManager.csproj.AssemblyReference.cache
+/ServiceManager/obj/x86/Debug/ServiceManager.csproj.AssemblyReference.cache
+/ServiceManager/obj/x86/Release/ServiceManager.csproj.AssemblyReference.cache
+/SparksToothChart/obj/Debug/WPF/Wpf3dControl.baml
+/SparksToothChart/obj/Debug/SparksToothChart.csproj.AssemblyReference.cache
+/SparksToothChart/obj/Debug/SparksToothChart_MarkupCompile.cache
+/SparksToothChart/obj/LinuxRelease/SparksToothChart.csproj.AssemblyReference.cache
+/SparksToothChart/obj/Release/SparksToothChart.csproj.AssemblyReference.cache
+/SparksToothChart/obj/x86/Debug/SparksToothChart.csproj.AssemblyReference.cache
+/SparksToothChart/obj/x86/LinuxRelease/SparksToothChart.csproj.AssemblyReference.cache
+/SparksToothChart/obj/x86/Release/SparksToothChart.csproj.AssemblyReference.cache
+/SparksToothChart/TestForm/obj/Debug/TestForm.csproj.AssemblyReference.cache
+/.vs/zendent-mvp/v17/.wsuo
+/.vs/zendent-mvp/v17/Browse.VC.db-shm
+/.vs/zendent-mvp/v17/Browse.VC.db-wal
+/CentralManager/obj/Debug/xCentralManager.csproj.AssemblyReference.cache
+/CentralManager/obj/Release/xCentralManager.csproj.AssemblyReference.cache
+/CentralManager/obj/x86/Debug/xCentralManager.csproj.AssemblyReference.cache
+/CentralManager/obj/x86/Release/xCentralManager.csproj.AssemblyReference.cache
+/CodeBase/obj/Debug/xCodeBase.csproj.AssemblyReference.cache
+/DataConnectionBase/obj/Debug/netstandard2.0/xDataConnectionBaseStandard.AssemblyInfoInputs.cache
+/DataConnectionBase/obj/Debug/netstandard2.0/xDataConnectionBaseStandard.csproj.AssemblyReference.cache
+/DataConnectionBase/obj/Debug/xDataConnectionBase.csproj.AssemblyReference.cache
+/DocumentationBuilder/obj/Debug/xDocumentationBuilder.csproj.AssemblyReference.cache
+/DocumentationBuilder/obj/LinuxRelease/xDocumentationBuilder.csproj.AssemblyReference.cache
+/DocumentationBuilder/obj/Release/xDocumentationBuilder.csproj.AssemblyReference.cache
+/DocumentationBuilder/obj/x86/Debug/xDocumentationBuilder.csproj.AssemblyReference.cache
+/DocumentationBuilder/obj/x86/LinuxRelease/xDocumentationBuilder.csproj.AssemblyReference.cache
+/DocumentationBuilder/obj/x86/Release/xDocumentationBuilder.csproj.AssemblyReference.cache
+/OpenDentalWpf/obj/x86/Release/OpenDentalWpf_MarkupCompile.lref
+/OpenDentalWpf/obj/x86/Debug/OpenDentalWpf_MarkupCompile.lref
+/TestToothChart/obj/x86/Release/TestToothChart.csproj.AssemblyReference.cache
+/UnitTests/obj/Debug/UnitTests.csproj.AssemblyReference.cache
+/UnitTests/obj/LinuxRelease/UnitTests.csproj.AssemblyReference.cache
+/UnitTests/obj/Release/UnitTests.csproj.AssemblyReference.cache
+/WpfControlsOD/obj/Debug/InternalTools/Job Manager/FrmJobGitBranch.baml
+/WpfControlsOD/obj/Debug/Themes/DataGridDict.baml
+/WpfControlsOD/obj/Debug/Themes/Generic.baml
+/WpfControlsOD/obj/Debug/Themes/TabControlDict.baml
+/WpfControlsOD/obj/Debug/UI/Controls/ImagingModule/ImageDockHeader.baml
+/WpfControlsOD/obj/Debug/UI/Controls/ImagingModule/ImageSelector.baml
+/WpfControlsOD/obj/Debug/UI/Controls/ImagingModule/UnmountedBar.baml
+/WpfControlsOD/obj/Debug/UI/Controls/ImagingModule/WindowImageFloatWindows.baml
+/WpfControlsOD/obj/Debug/UI/Controls/ImagingModule/WindowingSlider.baml
+/WpfControlsOD/obj/Debug/UI/Controls/ImagingModule/ZoomSlider.baml
+/WpfControlsOD/obj/Debug/UI/Controls/Supplemental/WindowComboPicker.baml
+/WpfControlsOD/obj/Debug/UI/Controls/Supplemental/WindowMonthCalendar.baml
+/WpfControlsOD/obj/Debug/UI/DatabaseIntegrity/WarningIntegrity.baml
+/WpfControlsOD/obj/Debug/UI/Dialogs/FrmColorDialog.baml
+/WpfControlsOD/obj/Debug/UI/Progress/FrmProgressAuto.baml
+/WpfControlsOD/obj/Debug/WpfControlsOD.csproj.AssemblyReference.cache
+/WpfControlsOD/obj/Debug/WpfControlsOD_MarkupCompile.cache
+/WpfControlsOD/obj/Release/WpfControlsOD.csproj.AssemblyReference.cache
+/xCrudGenerator/obj/Debug/xCrudGenerator.csproj.AssemblyReference.cache
+/xCrudGenerator/obj/x86/Debug/xCrudGenerator.csproj.AssemblyReference.cache
+/.vs/zendent-mvp/v17/Browse.VC.db
+/.vs/OpenDental/v17/.suo
+/.vs/zendent-mvp/v17/DocumentLayout.json
+/CentralManager/bin/Debug/CentralManager.exe
+/CentralManager/bin/Debug/CentralManager.pdb
+/CentralManager/bin/Debug/CodeBase.dll
+/CentralManager/bin/Debug/CodeBase.pdb
+/CentralManager/bin/Debug/DataConnectionBase.dll
+/CentralManager/bin/Debug/DataConnectionBase.pdb
+/CentralManager/bin/Debug/OpenDental.exe
+/CentralManager/bin/Debug/OpenDental.pdb
+/CentralManager/bin/Debug/OpenDentalCloud.dll
+/CentralManager/bin/Debug/OpenDentalCloud.pdb
+/CentralManager/bin/Debug/OpenDentalGraph.dll
+/CentralManager/bin/Debug/OpenDentalGraph.pdb
+/CentralManager/bin/Debug/OpenDentBusiness.dll
+/CentralManager/bin/Debug/OpenDentBusiness.pdb
+/CentralManager/bin/Debug/ServiceManager.exe
+/CentralManager/bin/Debug/ServiceManager.pdb
+/CentralManager/bin/Debug/SparksToothChart.dll
+/CentralManager/bin/Debug/SparksToothChart.pdb
+/CentralManager/obj/Debug/CentralManager.exe
+/CentralManager/obj/Debug/CentralManager.pdb
+/CentralManager/obj/Debug/xCentralManager.csproj.GenerateResource.cache
+/CodeBase/bin/Debug/CodeBase.dll
+/CodeBase/bin/Debug/CodeBase.pdb
+/CodeBase/obj/Debug/CodeBase.dll
+/CodeBase/obj/Debug/CodeBase.pdb
+/CodeBase/obj/Debug/xCodeBase.csproj.GenerateResource.cache
+/DatabaseIntegrityCheck/bin/Debug/CodeBase.dll
+/DatabaseIntegrityCheck/bin/Debug/CodeBase.pdb
+/DatabaseIntegrityCheck/bin/Debug/DatabaseIntegrityCheck.exe
+/DatabaseIntegrityCheck/bin/Debug/DatabaseIntegrityCheck.pdb
+/DatabaseIntegrityCheck/obj/Debug/DatabaseIntegrityCheck.exe
+/DatabaseIntegrityCheck/obj/Debug/DatabaseIntegrityCheck.pdb
+/DatabaseIntegrityCheck/obj/Debug/xDatabaseIntegrityCheck.csproj.GenerateResource.cache
+/DataConnectionBase/bin/Debug/CodeBase.dll
+/DataConnectionBase/bin/Debug/CodeBase.pdb
+/DataConnectionBase/bin/Debug/DataConnectionBase.dll
+/DataConnectionBase/bin/Debug/DataConnectionBase.pdb
+/DataConnectionBase/obj/Debug/DataConnectionBase.dll
+/DataConnectionBase/obj/Debug/DataConnectionBase.pdb
+/Direct2dWrapper/bin/Direct2dWrapper.dll
+/Direct2dWrapper/bin/Direct2dWrapper.pdb
+/.vs/zendent-mvp/v17/DocumentLayout.backup.json
+/Direct2dWrapper/Debug/D2DWrapperHwnd.obj
+/Direct2dWrapper/Debug/Direct2dWrapper.ilk
+/Direct2dWrapper/Debug/Direct2dWrapper.obj
+/Direct2dWrapper/Debug/Direct2dWrapper.pch
+/Direct2dWrapper/Debug/dllmain.obj
+/Direct2dWrapper/Debug/pch.obj
+/Direct2dWrapper/Debug/vc143.idb
+/.vs/OpenDental/v17/Solution.VC.db
+/Direct2dWrapper/Debug/D2DWrapperHwnd.obj
+/Direct2dWrapper/Debug/Direct2dWrapper.ilk
+/Direct2dWrapper/Debug/Direct2dWrapper.obj
+/Direct2dWrapper/Debug/vc143.idb
+/WpfControlsOD/obj/Debug/Frms/FrmDocumentSize.g.cs
+/WpfControlsOD/obj/Debug/Frms/FrmDocumentSize.g.i.cs
+/.vs/OpenDental/v17/DocumentLayout.json
+/MySQLManager/obj/x86/Debug/xMySQLManager.csproj.AssemblyReference.cache
+/.vs/OpenDental/v17/DocumentLayout.backup.json
+/MySQLManager/bin/Debug/CodeBase.dll
+/MySQLManager/bin/Debug/CodeBase.pdb
+/MySQLManager/bin/Debug/DataConnectionBase.dll
+/MySQLManager/bin/Debug/DataConnectionBase.pdb

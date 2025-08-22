@@ -1,0 +1,12 @@
+CREATE TABLE [mountitemdef] ( [MountItemDefNum] bigint NOT NULL IDENTITY(1,1),
+[MountDefNum] bigint NOT NULL,
+[Xpos] int NOT NULL,
+[Ypos] int NOT NULL,
+[Width] int NOT NULL,
+[Height] int NOT NULL,
+[ItemOrder] int NOT NULL,
+[RotateOnAcquire] int NOT NULL,
+[ToothNumbers] varchar(255) NOT NULL,
+[TextShowing] text NOT NULL,
+[FontSize] float NOT NULL,
+CONSTRAINT PK_MountItemDefNum PRIMARY KEY ([MountItemDefNum]) );

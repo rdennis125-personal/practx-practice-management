@@ -1,0 +1,13 @@
+CREATE TABLE [mountdef] ( [MountDefNum] bigint NOT NULL IDENTITY(1,1),
+[Description] varchar(255) DEFAULT NULL,
+[ItemOrder] int NOT NULL,
+[Width] int NOT NULL,
+[Height] int NOT NULL,
+[ColorBack] int NOT NULL,
+[ColorFore] int NOT NULL,
+[ColorTextBack] int NOT NULL,
+[ScaleValue] varchar(255) NOT NULL,
+[DefaultCat] bigint NOT NULL,
+[FlipOnAcquire] tinyint NOT NULL,
+[AdjModeAfterSeries] tinyint NOT NULL,
+CONSTRAINT PK_MountDefNum PRIMARY KEY ([MountDefNum]) );

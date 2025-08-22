@@ -1,0 +1,10 @@
+CREATE TABLE [orthochartlog] ( [OrthoChartLogNum] bigint NOT NULL IDENTITY(1,1),
+[PatNum] bigint NOT NULL,
+[ComputerName] varchar(255) NOT NULL,
+[DateTimeLog] datetime NOT NULL DEFAULT '0001-01-01 00:00:00',
+[DateTimeService] datetime NOT NULL DEFAULT '0001-01-01 00:00:00',
+[UserNum] bigint NOT NULL,
+[ProvNum] bigint NOT NULL,
+[OrthoChartRowNum] bigint NOT NULL,
+[LogData] VARCHAR(MAX) NOT NULL,
+CONSTRAINT PK_OrthoChartLogNum PRIMARY KEY ([OrthoChartLogNum]) );

@@ -1,0 +1,33 @@
+CREATE TABLE [referral] (
+ [ReferralNum] bigint NOT NULL IDENTITY(1,1),
+[LName] varchar(100) DEFAULT '',
+[FName] varchar(100) DEFAULT '',
+[MName] varchar(100) DEFAULT '',
+[SSN] varchar(9) DEFAULT '',
+[UsingTIN] tinyint NOT NULL DEFAULT 0,
+[Specialty] bigint NOT NULL,
+[ST] varchar(2) DEFAULT '',
+[Telephone] varchar(10) DEFAULT '',
+[Address] varchar(100) DEFAULT '',
+[Address2] varchar(100) DEFAULT '',
+[City] varchar(100) DEFAULT '',
+[Zip] varchar(10) DEFAULT '',
+[Note] text DEFAULT NULL,
+[Phone2] varchar(30) DEFAULT '',
+[IsHidden] tinyint NOT NULL DEFAULT 0,
+[NotPerson] tinyint NOT NULL DEFAULT 0,
+[Title] varchar(255) DEFAULT '',
+[EMail] varchar(255) DEFAULT '',
+[PatNum] bigint NOT NULL,
+[NationalProvID] varchar(255) DEFAULT NULL,
+[Slip] bigint NOT NULL,
+[IsDoctor] tinyint NOT NULL,
+[IsTrustedDirect] tinyint NOT NULL,
+[DateTStamp] timestamp NOT NULL DEFAULT GETDATE(),-- ON UPDATE GETDATE(),
+[IsPreferred] tinyint NOT NULL,
+[BusinessName] varchar(255) NOT NULL,
+[DisplayNote] varchar(4000) NOT NULL,
+
+CONSTRAINT PK_ReferralNum PRIMARY KEY ([ReferralNum]));
+
+GO
