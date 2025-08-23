@@ -1,0 +1,605 @@
+({
+  "forms": [
+    {
+      "source": {
+        "formClass": "OpenDental.FormSchoolClassEdit",
+        "designFile": "OpenDental/Forms/FormSchoolClassEdit.designer.cs",
+        "codeBehindFile": "OpenDental/Forms/FormSchoolClassEdit.cs",
+        "project": "OpenDental",
+        "userControls": []
+      },
+      "route": "/school-classes/edit/{id}",
+      "entities": {
+        "SchoolClass": {
+          "SchoolClassNum": { "type": "number", "description": "Primary key" },
+          "GradYear": { "type": "number", "description": "Graduation year" },
+          "Descript": { "type": "string", "description": "Class description" }
+        }
+      },
+      "form": {
+        "fields": [
+          {
+            "name": "GradYear",
+            "type": "number",
+            "required": true,
+            "validation": [
+              { "rule": "required", "message": "Please enter a graduation year." },
+              { "rule": "integer", "message": "Graduation year must be a valid integer." }
+            ],
+            "default": null
+          },
+          {
+            "name": "Descript",
+            "type": "string",
+            "required": false,
+            "validation": [],
+            "default": ""
+          }
+        ],
+        "lookups": {},
+        "validation": {
+          "GradYear": [
+            { "rule": "required", "message": "Please enter a graduation year." },
+            { "rule": "integer", "message": "Graduation year must be a valid integer." }
+          ]
+        }
+      },
+      "grids": [],
+      "intents": [
+        "Save",
+        "Cancel",
+        "Delete"
+      ],
+      "api": [
+        { "method": "GET", "path": "/api/school-classes/{id}", "request": null, "response": "SchoolClass" },
+        { "method": "PUT", "path": "/api/school-classes/{id}", "request": "SchoolClassUpdate", "response": "SchoolClass" },
+        { "method": "DELETE", "path": "/api/school-classes/{id}", "request": null, "response": null }
+      ],
+      "risks": []
+    },
+    {
+      "source": {
+        "formClass": "OpenDental.FormReqNeededEdit",
+        "designFile": "OpenDental/Forms/FormReqNeededEdit.designer.cs",
+        "codeBehindFile": "OpenDental/Forms/FormReqNeededEdit.cs",
+        "project": "OpenDental",
+        "userControls": []
+      },
+      "route": "/requirements/edit/{id}",
+      "entities": {
+        "ReqNeeded": {
+          "ReqNeededNum": { "type": "number", "description": "Primary key" },
+          "Descript": { "type": "string", "description": "Requirement description" }
+        }
+      },
+      "form": {
+        "fields": [
+          {
+            "name": "Descript",
+            "type": "string",
+            "required": true,
+            "validation": [
+              { "rule": "required", "message": "Please enter a description first." }
+            ],
+            "default": ""
+          }
+        ],
+        "lookups": {},
+        "validation": {
+          "Descript": [
+            { "rule": "required", "message": "Please enter a description first." }
+          ]
+        }
+      },
+      "grids": [],
+      "intents": [
+        "Save",
+        "Cancel",
+        "Delete"
+      ],
+      "api": [
+        { "method": "GET", "path": "/api/requirements/{id}", "request": null, "response": "ReqNeeded" },
+        { "method": "PUT", "path": "/api/requirements/{id}", "request": "ReqNeededUpdate", "response": "ReqNeeded" },
+        { "method": "DELETE", "path": "/api/requirements/{id}", "request": null, "response": null }
+      ],
+      "risks": []
+    },
+    {
+      "source": {
+        "formClass": "OpenDental.FormDispensary",
+        "designFile": "OpenDental/Forms/FormDispensary.designer.cs",
+        "codeBehindFile": "OpenDental/Forms/FormDispensary.cs",
+        "project": "OpenDental",
+        "userControls": []
+      },
+      "route": "/dispensary",
+      "entities": {
+        "Provider": {
+          "ProvNum": { "type": "number", "description": "Provider number" },
+          "LName": { "type": "string", "description": "Last name" },
+          "FName": { "type": "string", "description": "First name" },
+          "GradYear": { "type": "number", "description": "Graduation year" },
+          "Descript": { "type": "string", "description": "Class description" }
+        },
+        "DispSupply": {
+          "DateDispensed": { "type": "string", "description": "Date dispensed" },
+          "Descript": { "type": "string", "description": "Description" },
+          "DispQuantity": { "type": "number", "description": "Quantity" },
+          "Note": { "type": "string", "description": "Note" }
+        }
+      },
+      "form": {
+        "fields": [
+          { "name": "comboClass", "type": "lookup", "required": false, "validation": [], "default": "All" },
+          { "name": "textProvNum", "type": "string", "required": false, "validation": [], "default": "" },
+          { "name": "textLName", "type": "string", "required": false, "validation": [], "default": "" },
+          { "name": "textFName", "type": "string", "required": false, "validation": [], "default": "" }
+        ],
+        "lookups": {
+          "comboClass": { "source": "SchoolClasses", "valueField": "SchoolClassNum", "displayField": "Descript" }
+        },
+        "validation": {}
+      },
+      "grids": [
+        {
+          "name": "Students",
+          "columns": [
+            { "name": "ProvNum", "type": "number", "sortable": true, "filterable": true, "editable": false },
+            { "name": "Last Name", "type": "string", "sortable": true, "filterable": true, "editable": false },
+            { "name": "First Name", "type": "string", "sortable": true, "filterable": true, "editable": false },
+            { "name": "Class", "type": "string", "sortable": true, "filterable": true, "editable": false }
+          ],
+          "rowId": "ProvNum",
+          "editable": false
+        },
+        {
+          "name": "DispSupply",
+          "columns": [
+            { "name": "DateDispensed", "type": "string", "sortable": true, "filterable": true, "editable": false },
+            { "name": "Description", "type": "string", "sortable": true, "filterable": true, "editable": false },
+            { "name": "Qty", "type": "number", "sortable": true, "filterable": true, "editable": false },
+            { "name": "Note", "type": "string", "sortable": true, "filterable": true, "editable": false }
+          ],
+          "rowId": null,
+          "editable": false
+        }
+      ],
+      "intents": [
+        "SelectStudent",
+        "ViewDispSupply",
+        "OK",
+        "Cancel"
+      ],
+      "api": [
+        { "method": "GET", "path": "/api/providers", "request": null, "response": "Provider[]" },
+        { "method": "GET", "path": "/api/disp-supplies?provNum={provNum}", "request": null, "response": "DispSupply[]" }
+      ],
+      "risks": []
+    },
+    {
+      "source": {
+        "formClass": "OpenDental.FormWebSchedCarrierRuleCopyToClinics",
+        "designFile": "OpenDental/Forms/FormWebSchedCarrierRuleCopyToClinics.designer.cs",
+        "codeBehindFile": "OpenDental/Forms/FormWebSchedCarrierRuleCopyToClinics.cs",
+        "project": "OpenDental",
+        "userControls": []
+      },
+      "route": "/web-sched-carrier-rules/copy",
+      "entities": {
+        "Clinic": {
+          "ClinicNum": { "type": "number", "description": "Clinic number" },
+          "Abbr": { "type": "string", "description": "Clinic abbreviation" }
+        },
+        "WebSchedCarrierRule": {
+          "WebSchedCarrierRuleNum": { "type": "number", "description": "Primary key" },
+          "CarrierName": { "type": "string", "description": "Carrier name" },
+          "DisplayName": { "type": "string", "description": "Display name" },
+          "Rule": { "type": "string", "description": "Rule" },
+          "Message": { "type": "string", "description": "Message" }
+        }
+      },
+      "form": {
+        "fields": [
+          { "name": "comboClinicsFrom", "type": "lookup", "required": true, "validation": [], "default": null },
+          { "name": "listClinicsCopyTo", "type": "multi-lookup", "required": true, "validation": [], "default": [] },
+          { "name": "checkOverride", "type": "boolean", "required": false, "validation": [], "default": false }
+        ],
+        "lookups": {
+          "comboClinicsFrom": { "source": "Clinics", "valueField": "ClinicNum", "displayField": "Abbr" },
+          "listClinicsCopyTo": { "source": "Clinics", "valueField": "ClinicNum", "displayField": "Abbr" }
+        },
+        "validation": {}
+      },
+      "grids": [
+        {
+          "name": "WebSchedCarrierRules",
+          "columns": [
+            { "name": "Insurance Carrier Name", "type": "string", "sortable": true, "filterable": true, "editable": false },
+            { "name": "Display Name", "type": "string", "sortable": true, "filterable": true, "editable": false },
+            { "name": "Rule", "type": "string", "sortable": true, "filterable": true, "editable": false },
+            { "name": "Message", "type": "string", "sortable": true, "filterable": true, "editable": false }
+          ],
+          "rowId": "WebSchedCarrierRuleNum",
+          "editable": false
+        }
+      ],
+      "intents": [
+        "CopyRules",
+        "CopyToAll",
+        "OK"
+      ],
+      "api": [
+        { "method": "GET", "path": "/api/clinics", "request": null, "response": "Clinic[]" },
+        { "method": "GET", "path": "/api/web-sched-carrier-rules?clinicNum={clinicNum}", "request": null, "response": "WebSchedCarrierRule[]" },
+        { "method": "POST", "path": "/api/web-sched-carrier-rules/copy", "request": "CopyRulesRequest", "response": null }
+      ],
+      "risks": []
+    },
+    {
+      "source": {
+        "formClass": "OpenDental.FormInsBlueBookRules",
+        "designFile": "OpenDental/Forms/FormInsBlueBookRules.designer.cs",
+        "codeBehindFile": "OpenDental/Forms/FormInsBlueBookRules.cs",
+        "project": "OpenDental",
+        "userControls": []
+      },
+      "route": "/ins-bluebook-rules",
+      "entities": {
+        "InsBlueBookRule": {
+          "InsBlueBookRuleNum": { "type": "number", "description": "Primary key" },
+          "RuleType": { "type": "string", "description": "Rule type" },
+          "Matching": { "type": "string", "description": "Matching criteria" },
+          "LimitType": { "type": "string", "description": "Limit type" },
+          "LimitValue": { "type": "string", "description": "Limit value" }
+        }
+      },
+      "form": {
+        "fields": [
+          { "name": "textUcrFeePercent", "type": "number", "required": true, "validation": [{ "rule": "range", "min": 0, "max": 100, "message": "Please enter a UCR Fee Percent between 0 and 100." }], "default": null },
+          { "name": "checkEnableAnonFeeShare", "type": "boolean", "required": false, "validation": [], "default": false },
+          { "name": "checkUsePlanNumInHierarchy", "type": "boolean", "required": false, "validation": [], "default": false },
+          { "name": "listAllowedFeeMethod", "type": "enum", "required": true, "validation": [], "default": null },
+          { "name": "listBlueBookFeature", "type": "enum", "required": true, "validation": [], "default": null }
+        ],
+        "lookups": {
+          "listAllowedFeeMethod": { "source": "InsBlueBookAllowedFeeMethod", "valueField": "value", "displayField": "label" },
+          "listBlueBookFeature": { "source": "AllowedFeeSchedsAutomate", "valueField": "value", "displayField": "label" }
+        },
+        "validation": {
+          "textUcrFeePercent": [
+            { "rule": "required", "message": "Please enter a UCR Fee Percent between 0 and 100." },
+            { "rule": "range", "min": 0, "max": 100, "message": "Please enter a UCR Fee Percent between 0 and 100." }
+          ]
+        }
+      },
+      "grids": [
+        {
+          "name": "InsBlueBookRules",
+          "columns": [
+            { "name": "RuleType", "type": "string", "sortable": true, "filterable": true, "editable": false },
+            { "name": "Matching", "type": "string", "sortable": true, "filterable": true, "editable": false },
+            { "name": "LimitType", "type": "string", "sortable": true, "filterable": true, "editable": false },
+            { "name": "LimitValue", "type": "string", "sortable": true, "filterable": true, "editable": false }
+          ],
+          "rowId": "InsBlueBookRuleNum",
+          "editable": false
+        }
+      ],
+      "intents": [
+        "Save",
+        "MoveUp",
+        "MoveDown",
+        "EditRule"
+      ],
+      "api": [
+        { "method": "GET", "path": "/api/ins-bluebook-rules", "request": null, "response": "InsBlueBookRule[]" },
+        { "method": "PUT", "path": "/api/ins-bluebook-rules/{id}", "request": "InsBlueBookRuleUpdate", "response": "InsBlueBookRule" }
+      ],
+      "risks": []
+    },
+    {
+      "source": {
+        "formClass": "OpenDental.FormPatientForms",
+        "designFile": "OpenDental/Forms/FormPatientForms.designer.cs",
+        "codeBehindFile": "OpenDental/Forms/FormPatientForms.cs",
+        "project": "OpenDental",
+        "userControls": []
+      },
+      "route": "/patients/{id}/forms",
+      "entities": {
+        "PatientForm": {
+          "SheetNum": { "type": "number", "description": "Sheet primary key" },
+          "EFormNum": { "type": "number", "description": "EForm primary key" },
+          "DocNum": { "type": "number", "description": "Document primary key" },
+          "Type": { "type": "string", "description": "Form type" },
+          "DateTime": { "type": "string", "description": "Date/Time" },
+          "Kiosk": { "type": "string", "description": "Kiosk" },
+          "Description": { "type": "string", "description": "Description" },
+          "ImageCategory": { "type": "string", "description": "Image Category" },
+          "Updated": { "type": "string", "description": "Updated" }
+        }
+      },
+      "form": {
+        "fields": [],
+        "lookups": {},
+        "validation": {}
+      },
+      "grids": [
+        {
+          "name": "PatientForms",
+          "columns": [
+            { "name": "Type", "type": "string", "sortable": true, "filterable": true, "editable": false },
+            { "name": "Date/Time", "type": "string", "sortable": true, "filterable": true, "editable": false },
+            { "name": "Kiosk", "type": "string", "sortable": true, "filterable": true, "editable": false },
+            { "name": "Description", "type": "string", "sortable": true, "filterable": true, "editable": false },
+            { "name": "Image Category", "type": "string", "sortable": true, "filterable": true, "editable": false },
+            { "name": "Updated", "type": "string", "sortable": true, "filterable": true, "editable": false }
+          ],
+          "rowId": "SheetNum",
+          "editable": false
+        }
+      ],
+      "intents": [
+        "AddSheet",
+        "AddEForm",
+        "Import",
+        "Copy",
+        "PreFill",
+        "Terminal",
+        "EditForm"
+      ],
+      "api": [
+        { "method": "GET", "path": "/api/patients/{id}/forms", "request": null, "response": "PatientForm[]" },
+        { "method": "POST", "path": "/api/patients/{id}/forms", "request": "PatientFormCreate", "response": "PatientForm" }
+      ],
+      "risks": ["fileDialogs"]
+    },
+    {
+      "source": {
+        "formClass": "OpenDental.FormRxSetup",
+        "designFile": "OpenDental/Forms/FormRxSetup.designer.cs",
+        "codeBehindFile": "OpenDental/Forms/FormRxSetup.cs",
+        "project": "OpenDental",
+        "userControls": []
+      },
+      "route": "/rx-setup",
+      "entities": {
+        "RxDef": {
+          "RxDefNum": { "type": "number", "description": "Primary key" },
+          "Drug": { "type": "string", "description": "Drug name" },
+          "IsControlled": { "type": "boolean", "description": "Is controlled substance" },
+          "Sig": { "type": "string", "description": "Directions" },
+          "Disp": { "type": "string", "description": "Dispense amount" },
+          "Refills": { "type": "string", "description": "Number of refills" },
+          "Notes": { "type": "string", "description": "Notes" }
+        }
+      },
+      "form": {
+        "fields": [
+          { "name": "checkProcCodeRequired", "type": "boolean", "required": false, "validation": [], "default": false }
+        ],
+        "lookups": {},
+        "validation": {}
+      },
+      "grids": [
+        {
+          "name": "RxDefs",
+          "columns": [
+            { "name": "Drug", "type": "string", "sortable": true, "filterable": true, "editable": false },
+            { "name": "Controlled", "type": "boolean", "sortable": true, "filterable": true, "editable": false },
+            { "name": "Sig", "type": "string", "sortable": true, "filterable": true, "editable": false },
+            { "name": "Disp", "type": "string", "sortable": true, "filterable": true, "editable": false },
+            { "name": "Refills", "type": "string", "sortable": true, "filterable": true, "editable": false },
+            { "name": "Notes", "type": "string", "sortable": true, "filterable": true, "editable": false }
+          ],
+          "rowId": "RxDefNum",
+          "editable": false
+        }
+      ],
+      "intents": [
+        "Add",
+        "AddCopy",
+        "Combine",
+        "Edit",
+        "SaveProcCodeRequired"
+      ],
+      "api": [
+        { "method": "GET", "path": "/api/rx-defs", "request": null, "response": "RxDef[]" },
+        { "method": "POST", "path": "/api/rx-defs", "request": "RxDefCreate", "response": "RxDef" },
+        { "method": "PUT", "path": "/api/rx-defs/{id}", "request": "RxDefUpdate", "response": "RxDef" },
+        { "method": "DELETE", "path": "/api/rx-defs/{id}", "request": null, "response": null }
+      ],
+      "risks": []
+    },
+    {
+      "source": {
+        "formClass": "OpenDental.FormInsBenefitNotes",
+        "designFile": "OpenDental/Forms/FormInsBenefitNotes.designer.cs",
+        "codeBehindFile": "OpenDental/Forms/FormInsBenefitNotes.cs",
+        "project": "OpenDental",
+        "userControls": []
+      },
+      "route": "/ins-benefit-notes/edit",
+      "entities": {
+        "InsBenefitNotes": {
+          "BenefitNotes": { "type": "string", "description": "Insurance benefit notes" }
+        }
+      },
+      "form": {
+        "fields": [
+          {
+            "name": "BenefitNotes",
+            "type": "string",
+            "required": false,
+            "validation": [],
+            "default": ""
+          }
+        ],
+        "lookups": {},
+        "validation": {}
+      },
+      "grids": [],
+      "intents": [
+        "Save"
+      ],                            
+      "api": [
+        { "method": "GET", "path": "/api/ins-benefit-notes/{id}", "request": null, "response": "InsBenefitNotes" },
+        { "method": "PUT", "path": "/api/ins-benefit-notes/{id}", "request": "InsBenefitNotesUpdate", "response": "InsBenefitNotes" }
+      ],
+      "risks": []
+    },
+    {
+      "source": {
+        "formClass": "OpenDental.FormApptViewEdit",
+        "designFile": "OpenDental/Forms/FormApptViewEdit.designer.cs",
+        "codeBehindFile": "OpenDental/Forms/FormApptViewEdit.cs",
+        "project": "OpenDental",
+        "userControls": []
+      },
+      "route": "/appt-views/edit/{id}",
+      "entities": {
+        "ApptView": {
+          "ApptViewNum": { "type": "number", "description": "Primary key" },
+          "Description": { "type": "string", "description": "View description" },
+          "RowsPerIncr": { "type": "number", "description": "Rows per increment" },
+          "WidthOpMinimum": { "type": "number", "description": "Minimum operatory width" },
+          "ApptTimeScrollStart": { "type": "string", "description": "Scroll start time" },
+          "IsScrollStartDynamic": { "type": "boolean", "description": "Dynamic scroll" },
+          "IsApptBubblesDisabled": { "type": "boolean", "description": "Disable appointment bubbles" },
+          "OnlyScheduledProvs": { "type": "boolean", "description": "Only scheduled providers" },
+          "OnlyScheduledProvDays": { "type": "boolean", "description": "Only scheduled provider days" },
+          "OnlySchedBeforeTime": { "type": "string", "description": "Only schedule before time" },
+          "OnlySchedAfterTime": { "type": "string", "description": "Only schedule after time" },
+          "ClinicNum": { "type": "number", "description": "Clinic number" },
+          "WaitingRmName": { "type": "string", "description": "Waiting room name format" },
+          "StackBehavUR": { "type": "string", "description": "Upper right stack behavior" },
+          "StackBehavLR": { "type": "string", "description": "Lower right stack behavior" }
+        }
+      },
+      "form": {
+        "fields": [
+          { "name": "Description", "type": "string", "required": true, "validation": [{ "rule": "required", "message": "A description must be entered." }], "default": "" },
+          { "name": "RowsPerIncr", "type": "number", "required": true, "validation": [{ "rule": "range", "min": 1, "max": 3, "message": "Must be a number between 1 and 3." }], "default": 1 },
+          { "name": "WidthOpMinimum", "type": "number", "required": true, "validation": [{ "rule": "range", "min": 0, "max": 2000, "message": "Invalid Minimum Op width." }], "default": 0 },
+          { "name": "ApptTimeScrollStart", "type": "string", "required": false, "validation": [{ "rule": "time", "message": "Scroll start time invalid." }], "default": "08:00" },
+          { "name": "IsScrollStartDynamic", "type": "boolean", "required": false, "validation": [], "default": false },
+          { "name": "IsApptBubblesDisabled", "type": "boolean", "required": false, "validation": [], "default": false },
+          { "name": "OnlyScheduledProvs", "type": "boolean", "required": false, "validation": [], "default": false },
+          { "name": "OnlyScheduledProvDays", "type": "boolean", "required": false, "validation": [], "default": false },
+          { "name": "OnlySchedBeforeTime", "type": "string", "required": false, "validation": [{ "rule": "time", "message": "Time before invalid." }], "default": "" },
+          { "name": "OnlySchedAfterTime", "type": "string", "required": false, "validation": [{ "rule": "time", "message": "Time after invalid." }], "default": "" },
+          { "name": "ClinicNum", "type": "lookup", "required": false, "validation": [], "default": 0 },
+          { "name": "WaitingRmName", "type": "enum", "required": false, "validation": [], "default": "None" },
+          { "name": "StackBehavUR", "type": "enum", "required": false, "validation": [], "default": "None" },
+          { "name": "StackBehavLR", "type": "enum", "required": false, "validation": [], "default": "None" }
+        ],
+        "lookups": {
+          "comboClinicsFrom": { "source": "Clinics", "valueField": "ClinicNum", "displayField": "Abbr" },
+          "listClinicsCopyTo": { "source": "Clinics", "valueField": "ClinicNum", "displayField": "Abbr" }
+        },
+        "validation": {
+          "Description": [
+            { "rule": "required", "message": "A description must be entered." }
+          ],
+          "RowsPerIncr": [
+            { "rule": "range", "min": 1, "max": 3, "message": "Must be a number between 1 and 3." }
+          ],
+          "WidthOpMinimum": [
+            { "rule": "range", "min": 0, "max": 2000, "message": "Invalid Minimum Op width." }
+          ],
+          "ApptTimeScrollStart": [
+            { "rule": "time", "message": "Scroll start time invalid." }
+          ]
+        }
+      },
+      "grids": [],
+      "intents": [
+        "Save",
+        "Cancel",
+        "Delete"
+      ],
+      "api": [
+        { "method": "GET", "path": "/api/appt-views/{id}", "request": null, "response": "ApptView" },
+        { "method": "PUT", "path": "/api/appt-views/{id}", "request": "ApptViewUpdate", "response": "ApptView" },
+        { "method": "DELETE", "path": "/api/appt-views/{id}", "request": null, "response": null }
+      ],
+      "risks": []
+    },
+    {
+      "source": {
+        "sourceType": "WPF",
+        "qualifiedName": "OpenDental.FrmPatientEditEmail",
+        "project": "WpfControlsOD",
+        "files": [
+          {"path": "WpfControlsOD\\Frms\\FrmPatientEditEmail.xaml.cs", "role": "codeBehind"}
+        ],
+        "userControlsOrPartials": [],
+        "metrics": { "approxLines": 70, "eventHandlers": 5 }
+      },
+      "route": {
+        "pattern": "/patients/{id}/edit-email",
+        "params": ["id"],
+        "queryParams": []
+      },
+      "entities": {
+        "Patient": {
+          "description": "A patient in the dental system",
+          "fields": [
+            {"name": "email", "type": "string", "required": false, "default": "", "validation": {"maxLength": 100}}
+          ]
+        }
+      },
+      "form": {
+        "fields": [
+          {
+            "name": "email",
+            "type": "string",
+            "required": false,
+            "validation": {"maxLength": 100},
+            "ui": {
+              "control": "text",
+              "placeholder": "Enter patient email"
+            }
+          }
+        ],
+        "lookups": {},
+        "validation": {
+          "rules": []
+        }
+      },
+      "grids": [],
+      "intents": [
+        {"name": "Save", "kind": "mutation", "confirmation": false},
+        {"name": "Cancel", "kind": "navigation"}
+      ],
+      "api": [
+        {"method": "GET", "path": "/api/patients/{id}", "request": null, "response": "Patient"},
+        {"method": "PUT", "path": "/api/patients/{id}/email", "request": "PatientEmailUpdate", "response": null}
+      ],
+      "navigation": {
+        "linksOut": [],
+        "breadcrumbs": ["Patients", "Edit Email"]
+      },
+      "auth": {
+        "requiresAuth": true,
+        "roles": [],
+        "claims": [],
+        "sensitiveFields": ["email"]
+      },
+      "platform": {
+        "desktopOnly": [],
+        "webAlternatives": {}
+      },
+      "sideEffects": [],
+      "risks": [
+        "No maxLength enforcement in WPF textbox; must enforce in React.",
+        "PII field (email) requires proper handling."
+      ],
+      "uxNotes": [
+        "Shows remaining character count as user types.",
+        "Save can be triggered by Alt+S.",
+        "Focus and selection set on show."
+      ]
+    }
+  ]
+}
