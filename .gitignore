@@ -222,3 +222,5 @@ lcov.info
 /MySQLManager/bin/Debug/CodeBase.pdb
 /MySQLManager/bin/Debug/DataConnectionBase.dll
 /MySQLManager/bin/Debug/DataConnectionBase.pdb
+/zendentdb/zendentdb.dbmdl
+/zendentdb/zendentdb.jfm
