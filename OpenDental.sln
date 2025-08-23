@@ -73,6 +73,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "yaml", "yaml", "{087D8A53-0
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "zendentdb", "zendentdb\zendentdb.sqlproj", "{EFD410C1-AF21-40D1-B3C1-35FDC1E796C9}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Conversion", "Conversion", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+	ProjectSection(SolutionItems) = preProject
+		form_manifest.txt = form_manifest.txt
+		React_Specs.txt = React_Specs.txt
+		ui-manifest.json = ui-manifest.json
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -373,6 +380,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{09B793B0-B301-43C1-8EE7-66ED82CBB850} = {998EC688-3215-46A1-B756-77837CD3725E}
 		{087D8A53-0625-4C7A-992B-8CCE38DF0E0A} = {998EC688-3215-46A1-B756-77837CD3725E}
+		{02EA681E-C7D8-13C7-8484-4AC65E1B71E8} = {998EC688-3215-46A1-B756-77837CD3725E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE365F0-87EA-409E-A755-8AEF80638404}
