@@ -1,0 +1,705 @@
+You are generating a SINGLE consolidated behavioral specification for a batch of legacy UI artifacts (part of a larger solution) to migrate to React + TypeScript.
+
+CLEAN-ROOM & LICENSE RULES (MANDATORY):
+- Behavioral spec only. No source code, no pseudo-code, no decompiled content.
+- Avoid private/internal identifiers; keep only business-level field names and public routes/contracts.
+- Describe validation in words/JSON rules (e.g., “email format”, “YYYY-MM-DD”).
+- If proprietary or ambiguous logic is suspected, record in "risks" with "proprietaryAlgorithmSuspected".
+- In business/UX naming ONLY (entities, labels, route examples, UX notes), replace “OpenDental” (and “Open Dental”) with “PractX”. Do NOT change file paths in source.files.
+
+NORMALIZATION:
+- lowerCamelCase for field and intent names.
+- Framework-neutral wording (events/intents, persisted form state, server round-trip).
+- Domain-generic component names (e.g., appointmentsGrid).
+
+INPUT (BATCH JSON) — paste below this line:
+---BEGIN BATCH JSON---
+{
+  "foundAt": ".",
+  "index": 26,
+  "totalBatches": 42,
+  "range": {
+    "start": 1000,
+    "count": 40
+  },
+  "artifacts": [
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\InternalTools\\Job Manager\\FormVersionPrompt.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 171,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\InternalTools\\Job Manager\\ODjobTextEditor.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 624,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\InternalTools\\Job Manager\\ODtextEditor.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 472,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\InternalTools\\Job Manager\\UserControlJobEdit.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 1163,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\InternalTools\\Job Manager\\UserControlJobManagerEditor.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 96,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\InternalTools\\Job Manager\\UserControlJobVersionStatistics.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 208,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\InternalTools\\Job Manager\\UserControlMarketingEdit.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 999,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\InternalTools\\Job Manager\\UserControlProjectEdit.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 838,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\InternalTools\\Job Manager\\UserControlProjects.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 197,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\InternalTools\\Job Manager\\UserControlQueryEdit.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 1140,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\InternalTools\\Job Manager\\UserControlSprintManager.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 618,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\InternalTools\\Job Manager\\UserControlTeamReport.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 154,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\InternalTools\\Phones\\EscalationView.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 31,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\InternalTools\\Phones\\FormMap.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 495,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\InternalTools\\Phones\\FormMapAreaContainerDetail.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 152,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\InternalTools\\Phones\\FormMapAreaContainerEdit.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 231,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\InternalTools\\Phones\\FormMapAreaContainers.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 74,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\InternalTools\\Phones\\FormMapHQPrefs.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 308,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\InternalTools\\Phones\\FormPhoneComps.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 169,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\InternalTools\\Phones\\FormPhoneConfEdit.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 156,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\InternalTools\\Phones\\FormPhoneConfs.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 129,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\InternalTools\\Phones\\FormPhoneEmpDefaultEdit.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 558,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\InternalTools\\Phones\\FormPhoneEmpDefaultEscalationEdit.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 175,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\InternalTools\\Phones\\FormPhoneEmpDefaults.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 108,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\InternalTools\\Phones\\FormPhoneGraphAdminEdit.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 153,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\InternalTools\\Phones\\FormPhoneGraphDateEdit.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 137,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\InternalTools\\Phones\\FormPhoneGraphEdit.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 705,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\InternalTools\\Phones\\FormPhoneList.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 463,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\InternalTools\\Phones\\FormScreenshotBrowse.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 76,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\InternalTools\\Phones\\FormVoiceMails.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 195,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\InternalTools\\Phones\\MapNumber.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 31,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\InternalTools\\Phones\\MapPanel.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 355,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\InternalTools\\Phones\\PhoneTile.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 214,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\InternalTools\\Phones\\UserControlMapDetails.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 109,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\InternalTools\\Phones\\UserControlPhoneSmall.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 357,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\InternalTools\\JobManagerUserOverview.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 492,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\Main Modules\\ControlAccount.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 2076,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\Main Modules\\ControlAppt.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 1048,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\Main Modules\\ControlChart.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 3234,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\Main Modules\\ControlFamily.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 257,
+        "eventHandlers": 0
+      }
+    }
+  ]
+}
+---END BATCH JSON---
+
+TASK:
+For EACH artifact in `artifacts[]`, analyze the referenced files (markup, code-behind, controller, view, designer, etc.) available in the workspace and produce a clean-room spec.
+
+OUTPUT:
+Return JSON ONLY with this shape:
+{
+  "batch": { "index": 26, "totalBatches": 42, "artifacts": 40 },
+  "specs": [
+    {
+      "source": {
+        "sourceType": "WinForms | WPF | ASPX | MVC | RazorPages | BlazorServer | BlazorWasm | UWP | WinUI | XamarinForms | MAUI | AngularJS | Knockout | Silverlight | Other",
+        "qualifiedName": "TypeNameOrRoute (omit private/internal identifiers if not public)",
+        "project": "ProjectName",
+        "files": [{"path": "relative/or/absolute/path", "role": "markup|codeBehind|controller|view|designer|viewModel|other"}],
+        "metrics": { "approxLines": 0, "eventHandlers": 0 }
+      },
+      "route": { "pattern": "/entity/{id}/edit", "params": [], "queryParams": [] },
+      "entities": {},
+      "form": { "fields": [], "lookups": {}, "validation": { "rules": [] } },
+      "grids": [],
+      "intents": [],
+      "api": [],
+      "navigation": { "linksOut": [], "breadcrumbs": [] },
+      "auth": { "requiresAuth": true, "roles": [], "claims": [], "sensitiveFields": [] },
+      "platform": { "desktopOnly": [], "webAlternatives": {} },
+      "sideEffects": [],
+      "risks": [],
+      "uxNotes": []
+    }
+  ]
+}
+
+RULES:
+- ONE valid JSON object only, no comments/prose.
+- If unknown, emit empty arrays/objects (not null).
+- Do not exceed 40 artifacts per response; process the full batch as provided here (already constrained).

@@ -1,0 +1,561 @@
+You are generating a SINGLE consolidated behavioral specification for a batch of legacy UI artifacts (part of a larger solution) to migrate to React + TypeScript.
+
+CLEAN-ROOM & LICENSE RULES (MANDATORY):
+- Behavioral spec only. No source code, no pseudo-code, no decompiled content.
+- Avoid private/internal identifiers; keep only business-level field names and public routes/contracts.
+- Describe validation in words/JSON rules (e.g., “email format”, “YYYY-MM-DD”).
+- If proprietary or ambiguous logic is suspected, record in "risks" with "proprietaryAlgorithmSuspected".
+- In business/UX naming ONLY (entities, labels, route examples, UX notes), replace “OpenDental” (and “Open Dental”) with “PractX”. Do NOT change file paths in source.files.
+
+NORMALIZATION:
+- lowerCamelCase for field and intent names.
+- Framework-neutral wording (events/intents, persisted form state, server round-trip).
+- Domain-generic component names (e.g., appointmentsGrid).
+
+INPUT (BATCH JSON) — paste below this line:
+---BEGIN BATCH JSON---
+{
+  "foundAt": ".",
+  "index": 42,
+  "totalBatches": 42,
+  "range": {
+    "start": 1640,
+    "count": 31
+  },
+  "artifacts": [
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\TextRich.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 31,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\TextRich.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 1547,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\TextVDate.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 25,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\TextVDate.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 376,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\TextVDouble.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 23,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\TextVDouble.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 298,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\TextVInt.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 23,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\TextVInt.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 293,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\TextVTime.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 23,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\TextVTime.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 189,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\ToolBar.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 25,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\ToolBar.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 125,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\ToolBarButton.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 31,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\ToolBarButton.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 304,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\ToolTip.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 12,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\ToolTip.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 218,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\TreeView.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 26,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\TreeView.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 232,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\WebBrowser.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 24,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\WebBrowser.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 126,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\WebView2.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 25,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\WebView2.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 125,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\DatabaseIntegrity\\WarningIntegrity.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 36,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\DatabaseIntegrity\\WarningIntegrity.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 173,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Dialogs\\FrmColorDialog.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 58,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Dialogs\\FrmColorDialog.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 530,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Progress\\FrmProgressAuto.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 19,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Progress\\FrmProgressAuto.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 255,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "xCrudGenerator\\Properties\\Resources.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 63,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "xCrudGenerator\\Properties\\Settings.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 26,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "xCrudGenerator\\Form1.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 362,
+        "eventHandlers": 0
+      }
+    }
+  ]
+}
+---END BATCH JSON---
+
+TASK:
+For EACH artifact in `artifacts[]`, analyze the referenced files (markup, code-behind, controller, view, designer, etc.) available in the workspace and produce a clean-room spec.
+
+OUTPUT:
+Return JSON ONLY with this shape:
+{
+  "batch": { "index": 42, "totalBatches": 42, "artifacts": 31 },
+  "specs": [
+    {
+      "source": {
+        "sourceType": "WinForms | WPF | ASPX | MVC | RazorPages | BlazorServer | BlazorWasm | UWP | WinUI | XamarinForms | MAUI | AngularJS | Knockout | Silverlight | Other",
+        "qualifiedName": "TypeNameOrRoute (omit private/internal identifiers if not public)",
+        "project": "ProjectName",
+        "files": [{"path": "relative/or/absolute/path", "role": "markup|codeBehind|controller|view|designer|viewModel|other"}],
+        "metrics": { "approxLines": 0, "eventHandlers": 0 }
+      },
+      "route": { "pattern": "/entity/{id}/edit", "params": [], "queryParams": [] },
+      "entities": {},
+      "form": { "fields": [], "lookups": {}, "validation": { "rules": [] } },
+      "grids": [],
+      "intents": [],
+      "api": [],
+      "navigation": { "linksOut": [], "breadcrumbs": [] },
+      "auth": { "requiresAuth": true, "roles": [], "claims": [], "sensitiveFields": [] },
+      "platform": { "desktopOnly": [], "webAlternatives": {} },
+      "sideEffects": [],
+      "risks": [],
+      "uxNotes": []
+    }
+  ]
+}
+
+RULES:
+- ONE valid JSON object only, no comments/prose.
+- If unknown, emit empty arrays/objects (not null).
+- Do not exceed 40 artifacts per response; process the full batch as provided here (already constrained).

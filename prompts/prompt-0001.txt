@@ -1,0 +1,705 @@
+You are generating a SINGLE consolidated behavioral specification for a batch of legacy UI artifacts (part of a larger solution) to migrate to React + TypeScript.
+
+CLEAN-ROOM & LICENSE RULES (MANDATORY):
+- Behavioral spec only. No source code, no pseudo-code, no decompiled content.
+- Avoid private/internal identifiers; keep only business-level field names and public routes/contracts.
+- Describe validation in words/JSON rules (e.g., “email format”, “YYYY-MM-DD”).
+- If proprietary or ambiguous logic is suspected, record in "risks" with "proprietaryAlgorithmSuspected".
+- In business/UX naming ONLY (entities, labels, route examples, UX notes), replace “OpenDental” (and “Open Dental”) with “PractX”. Do NOT change file paths in source.files.
+
+NORMALIZATION:
+- lowerCamelCase for field and intent names.
+- Framework-neutral wording (events/intents, persisted form state, server round-trip).
+- Domain-generic component names (e.g., appointmentsGrid).
+
+INPUT (BATCH JSON) — paste below this line:
+---BEGIN BATCH JSON---
+{
+  "foundAt": ".",
+  "index": 1,
+  "totalBatches": 42,
+  "range": {
+    "start": 0,
+    "count": 40
+  },
+  "artifacts": [
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "CentralManager\\Properties\\Resources.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 63,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "CentralManager\\Properties\\Settings.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 26,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "CentralManager\\FormCentralConnectionEdit.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 300,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "CentralManager\\FormCentralConnectionGroupEdit.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 186,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "CentralManager\\FormCentralConnectionGroups.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 119,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "CentralManager\\FormCentralConnections.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 293,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "CentralManager\\FormCentralGroupPermEdit.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 173,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "CentralManager\\FormCentralManager.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 864,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "CentralManager\\FormCentralPasswordChange.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 131,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "CentralManager\\FormCentralPasswordCheck.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 94,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "CentralManager\\FormCentralPatientSearch.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 508,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "CentralManager\\FormCentralPatientTransfer.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 172,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "CentralManager\\FormCentralProdInc.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 331,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "CentralManager\\FormCentralReportSetup.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 105,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "CentralManager\\FormCentralSecurity.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 386,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "CentralManager\\FormCentralUserEdit.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 284,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "CentralManager\\FormCentralUserGroupEdit.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 110,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "CentralManager\\FormCentralUserGroups.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 85,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "CentralManager\\FormCentralUserPasswordEdit.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 164,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "CentralManager\\FormCentralUserSettings.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 122,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "CodeBase\\Controls\\ODWebView2.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 41,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "CodeBase\\Controls\\PrintPanel.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 56,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "CodeBase\\Progress\\FormProgressExtended.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 165,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "CodeBase\\Progress\\FormProgressStatus.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 151,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "CodeBase\\Progress\\ODProgressBar.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 90,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "CodeBase\\Properties\\Resources.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 63,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "DatabaseIntegrityCheck\\Properties\\Resources.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 63,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "DatabaseIntegrityCheck\\Properties\\Settings.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 26,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "DatabaseIntegrityCheck\\FormDatabaseCheck.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 197,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "DocumentationBuilder\\Properties\\Resources.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 63,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "DocumentationBuilder\\Properties\\Settings.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 26,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "DocumentationBuilder\\Form1.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 224,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "JobManagerDashboard\\Properties\\Resources.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 63,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "JobManagerDashboard\\Properties\\Settings.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 26,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "JobManagerDashboard\\App.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 8,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "JobManagerDashboard\\App.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 15,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "JobManagerDashboard\\MainWindow.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 478,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "JobManagerDashboard\\MainWindow.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 393,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "MobileWeb\\Properties\\Settings.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 55,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "ASPX",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "MobileWeb\\AppointmentDetails.aspx",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 42,
+        "eventHandlers": 0
+      }
+    }
+  ]
+}
+---END BATCH JSON---
+
+TASK:
+For EACH artifact in `artifacts[]`, analyze the referenced files (markup, code-behind, controller, view, designer, etc.) available in the workspace and produce a clean-room spec.
+
+OUTPUT:
+Return JSON ONLY with this shape:
+{
+  "batch": { "index": 1, "totalBatches": 42, "artifacts": 40 },
+  "specs": [
+    {
+      "source": {
+        "sourceType": "WinForms | WPF | ASPX | MVC | RazorPages | BlazorServer | BlazorWasm | UWP | WinUI | XamarinForms | MAUI | AngularJS | Knockout | Silverlight | Other",
+        "qualifiedName": "TypeNameOrRoute (omit private/internal identifiers if not public)",
+        "project": "ProjectName",
+        "files": [{"path": "relative/or/absolute/path", "role": "markup|codeBehind|controller|view|designer|viewModel|other"}],
+        "metrics": { "approxLines": 0, "eventHandlers": 0 }
+      },
+      "route": { "pattern": "/entity/{id}/edit", "params": [], "queryParams": [] },
+      "entities": {},
+      "form": { "fields": [], "lookups": {}, "validation": { "rules": [] } },
+      "grids": [],
+      "intents": [],
+      "api": [],
+      "navigation": { "linksOut": [], "breadcrumbs": [] },
+      "auth": { "requiresAuth": true, "roles": [], "claims": [], "sensitiveFields": [] },
+      "platform": { "desktopOnly": [], "webAlternatives": {} },
+      "sideEffects": [],
+      "risks": [],
+      "uxNotes": []
+    }
+  ]
+}
+
+RULES:
+- ONE valid JSON object only, no comments/prose.
+- If unknown, emit empty arrays/objects (not null).
+- Do not exceed 40 artifacts per response; process the full batch as provided here (already constrained).

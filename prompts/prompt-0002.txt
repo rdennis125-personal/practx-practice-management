@@ -1,0 +1,705 @@
+You are generating a SINGLE consolidated behavioral specification for a batch of legacy UI artifacts (part of a larger solution) to migrate to React + TypeScript.
+
+CLEAN-ROOM & LICENSE RULES (MANDATORY):
+- Behavioral spec only. No source code, no pseudo-code, no decompiled content.
+- Avoid private/internal identifiers; keep only business-level field names and public routes/contracts.
+- Describe validation in words/JSON rules (e.g., “email format”, “YYYY-MM-DD”).
+- If proprietary or ambiguous logic is suspected, record in "risks" with "proprietaryAlgorithmSuspected".
+- In business/UX naming ONLY (entities, labels, route examples, UX notes), replace “OpenDental” (and “Open Dental”) with “PractX”. Do NOT change file paths in source.files.
+
+NORMALIZATION:
+- lowerCamelCase for field and intent names.
+- Framework-neutral wording (events/intents, persisted form state, server round-trip).
+- Domain-generic component names (e.g., appointmentsGrid).
+
+INPUT (BATCH JSON) — paste below this line:
+---BEGIN BATCH JSON---
+{
+  "foundAt": ".",
+  "index": 2,
+  "totalBatches": 42,
+  "range": {
+    "start": 40,
+    "count": 40
+  },
+  "artifacts": [
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "MobileWeb\\AppointmentDetails.aspx.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 46,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "MobileWeb\\AppointmentDetails.aspx.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 42,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "ASPX",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "MobileWeb\\AppointmentFilter.aspx",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 34,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "MobileWeb\\AppointmentFilter.aspx.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 56,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "MobileWeb\\AppointmentFilter.aspx.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 42,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "ASPX",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "MobileWeb\\AppointmentImage.aspx",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 76,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "MobileWeb\\AppointmentImage.aspx.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 126,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "MobileWeb\\AppointmentImage.aspx.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 60,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "ASPX",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "MobileWeb\\AppointmentList.aspx",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 48,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "MobileWeb\\AppointmentList.aspx.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 142,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "MobileWeb\\AppointmentList.aspx.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 51,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "ASPX",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "MobileWeb\\Index.aspx",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 195,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "MobileWeb\\Index.aspx.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 20,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "MobileWeb\\Index.aspx.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 51,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "ASPX",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "MobileWeb\\PatientDetails.aspx",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 98,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "MobileWeb\\PatientDetails.aspx.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 80,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "MobileWeb\\PatientDetails.aspx.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 60,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "ASPX",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "MobileWeb\\PatientList.aspx",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 31,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "MobileWeb\\PatientList.aspx.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 59,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "MobileWeb\\PatientList.aspx.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 51,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "ASPX",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "MobileWeb\\PharmacyDetails.aspx",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 57,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "MobileWeb\\PharmacyDetails.aspx.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 41,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "MobileWeb\\PharmacyDetails.aspx.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 33,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "ASPX",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "MobileWeb\\PharmacyList.aspx",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 35,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "MobileWeb\\PharmacyList.aspx.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 24,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "MobileWeb\\PharmacyList.aspx.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 42,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "ASPX",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "MobileWeb\\ProcessLogin.aspx",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 2,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "MobileWeb\\ProcessLogin.aspx.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 65,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "MobileWeb\\ProcessLogin.aspx.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 24,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "ASPX",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "MobileWeb\\ProcessLogout.aspx",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 2,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "MobileWeb\\ProcessLogout.aspx.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 20,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "MobileWeb\\ProcessLogout.aspx.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 24,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "MySQLManager\\Properties\\Resources.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 63,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "MySQLManager\\Properties\\Settings.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 26,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "MySQLManager\\FormMySQLManager.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 247,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "MySQLManager\\FormMySQLUserEdit.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 186,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\Bridges\\FormDrCeph.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 199,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\Bridges\\FormHouseCalls.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 167,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\Bridges\\FormIap.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 213,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\Bridges\\FormOryxUserSettings.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 103,
+        "eventHandlers": 0
+      }
+    }
+  ]
+}
+---END BATCH JSON---
+
+TASK:
+For EACH artifact in `artifacts[]`, analyze the referenced files (markup, code-behind, controller, view, designer, etc.) available in the workspace and produce a clean-room spec.
+
+OUTPUT:
+Return JSON ONLY with this shape:
+{
+  "batch": { "index": 2, "totalBatches": 42, "artifacts": 40 },
+  "specs": [
+    {
+      "source": {
+        "sourceType": "WinForms | WPF | ASPX | MVC | RazorPages | BlazorServer | BlazorWasm | UWP | WinUI | XamarinForms | MAUI | AngularJS | Knockout | Silverlight | Other",
+        "qualifiedName": "TypeNameOrRoute (omit private/internal identifiers if not public)",
+        "project": "ProjectName",
+        "files": [{"path": "relative/or/absolute/path", "role": "markup|codeBehind|controller|view|designer|viewModel|other"}],
+        "metrics": { "approxLines": 0, "eventHandlers": 0 }
+      },
+      "route": { "pattern": "/entity/{id}/edit", "params": [], "queryParams": [] },
+      "entities": {},
+      "form": { "fields": [], "lookups": {}, "validation": { "rules": [] } },
+      "grids": [],
+      "intents": [],
+      "api": [],
+      "navigation": { "linksOut": [], "breadcrumbs": [] },
+      "auth": { "requiresAuth": true, "roles": [], "claims": [], "sensitiveFields": [] },
+      "platform": { "desktopOnly": [], "webAlternatives": {} },
+      "sideEffects": [],
+      "risks": [],
+      "uxNotes": []
+    }
+  ]
+}
+
+RULES:
+- ONE valid JSON object only, no comments/prose.
+- If unknown, emit empty arrays/objects (not null).
+- Do not exceed 40 artifacts per response; process the full batch as provided here (already constrained).

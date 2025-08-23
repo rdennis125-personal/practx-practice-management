@@ -1,0 +1,705 @@
+You are generating a SINGLE consolidated behavioral specification for a batch of legacy UI artifacts (part of a larger solution) to migrate to React + TypeScript.
+
+CLEAN-ROOM & LICENSE RULES (MANDATORY):
+- Behavioral spec only. No source code, no pseudo-code, no decompiled content.
+- Avoid private/internal identifiers; keep only business-level field names and public routes/contracts.
+- Describe validation in words/JSON rules (e.g., “email format”, “YYYY-MM-DD”).
+- If proprietary or ambiguous logic is suspected, record in "risks" with "proprietaryAlgorithmSuspected".
+- In business/UX naming ONLY (entities, labels, route examples, UX notes), replace “OpenDental” (and “Open Dental”) with “PractX”. Do NOT change file paths in source.files.
+
+NORMALIZATION:
+- lowerCamelCase for field and intent names.
+- Framework-neutral wording (events/intents, persisted form state, server round-trip).
+- Domain-generic component names (e.g., appointmentsGrid).
+
+INPUT (BATCH JSON) — paste below this line:
+---BEGIN BATCH JSON---
+{
+  "foundAt": ".",
+  "index": 7,
+  "totalBatches": 42,
+  "range": {
+    "start": 240,
+    "count": 40
+  },
+  "artifacts": [
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\Forms\\FormCvx.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 113,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\Forms\\FormDashboardWidgets.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 86,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\Forms\\FormDashboardWidgetSetup.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 181,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\Forms\\FormDatabaseMaintenance.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 613,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\Forms\\FormDatabaseMaintenancePat.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 359,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\Forms\\FormDatabaseMaintTemp.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 283,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\Forms\\FormDefaultCCProcs.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 126,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\Forms\\FormDefEdit.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 394,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\Forms\\FormDefEditBlockout.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 163,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\Forms\\FormDefEditImages.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 279,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\Forms\\FormDefEditWebSchedApptTypes.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 211,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\Forms\\FormDefinitionPicker.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 100,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\Forms\\FormDefinitions.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 196,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\Forms\\FormDentalSchoolSetup.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 167,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\Forms\\FormDepositEdit.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 607,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\Forms\\FormDeposits.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 115,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\Forms\\FormDiscountPlanEdit.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 455,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\Forms\\FormDiscountPlanMerge.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 255,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\Forms\\FormDiscountPlans.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 114,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\Forms\\FormDiscountPlanSubEdit.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 315,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\Forms\\FormDiseaseDefEdit.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 225,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\Forms\\FormDiseaseDefs.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 322,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\Forms\\FormDispensary.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 430,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\Forms\\FormDisplayFieldCategories.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 95,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\Forms\\FormDisplayFieldEdit.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 219,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\Forms\\FormDisplayFieldOrthoEdit.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 336,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\Forms\\FormDisplayFields.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 196,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\Forms\\FormDisplayFieldsOrthoChart.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 230,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\Forms\\FormDomainUserPick.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 87,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\Forms\\FormDoseSpotAssignClinicId.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 161,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\Forms\\FormDoseSpotAssignUserId.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 116,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\Forms\\FormDoseSpotProperyEdit.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 160,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\Forms\\FormDropboxAuthorize.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 94,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\Forms\\FormDrugManufacturerSetup.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 73,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\Forms\\FormDrugUnitSetup.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 74,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\Forms\\FormDunningEdit.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 415,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\Forms\\FormDunningSetup.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 284,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\Forms\\FormEClinicalWorks.designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 554,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\Forms\\FormEClipboardDefs.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 88,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "OpenDental\\Forms\\FormEClipboardImageCaptureDefEdit.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 329,
+        "eventHandlers": 0
+      }
+    }
+  ]
+}
+---END BATCH JSON---
+
+TASK:
+For EACH artifact in `artifacts[]`, analyze the referenced files (markup, code-behind, controller, view, designer, etc.) available in the workspace and produce a clean-room spec.
+
+OUTPUT:
+Return JSON ONLY with this shape:
+{
+  "batch": { "index": 7, "totalBatches": 42, "artifacts": 40 },
+  "specs": [
+    {
+      "source": {
+        "sourceType": "WinForms | WPF | ASPX | MVC | RazorPages | BlazorServer | BlazorWasm | UWP | WinUI | XamarinForms | MAUI | AngularJS | Knockout | Silverlight | Other",
+        "qualifiedName": "TypeNameOrRoute (omit private/internal identifiers if not public)",
+        "project": "ProjectName",
+        "files": [{"path": "relative/or/absolute/path", "role": "markup|codeBehind|controller|view|designer|viewModel|other"}],
+        "metrics": { "approxLines": 0, "eventHandlers": 0 }
+      },
+      "route": { "pattern": "/entity/{id}/edit", "params": [], "queryParams": [] },
+      "entities": {},
+      "form": { "fields": [], "lookups": {}, "validation": { "rules": [] } },
+      "grids": [],
+      "intents": [],
+      "api": [],
+      "navigation": { "linksOut": [], "breadcrumbs": [] },
+      "auth": { "requiresAuth": true, "roles": [], "claims": [], "sensitiveFields": [] },
+      "platform": { "desktopOnly": [], "webAlternatives": {} },
+      "sideEffects": [],
+      "risks": [],
+      "uxNotes": []
+    }
+  ]
+}
+
+RULES:
+- ONE valid JSON object only, no comments/prose.
+- If unknown, emit empty arrays/objects (not null).
+- Do not exceed 40 artifacts per response; process the full batch as provided here (already constrained).

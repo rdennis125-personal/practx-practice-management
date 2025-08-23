@@ -1,0 +1,705 @@
+You are generating a SINGLE consolidated behavioral specification for a batch of legacy UI artifacts (part of a larger solution) to migrate to React + TypeScript.
+
+CLEAN-ROOM & LICENSE RULES (MANDATORY):
+- Behavioral spec only. No source code, no pseudo-code, no decompiled content.
+- Avoid private/internal identifiers; keep only business-level field names and public routes/contracts.
+- Describe validation in words/JSON rules (e.g., “email format”, “YYYY-MM-DD”).
+- If proprietary or ambiguous logic is suspected, record in "risks" with "proprietaryAlgorithmSuspected".
+- In business/UX naming ONLY (entities, labels, route examples, UX notes), replace “OpenDental” (and “Open Dental”) with “PractX”. Do NOT change file paths in source.files.
+
+NORMALIZATION:
+- lowerCamelCase for field and intent names.
+- Framework-neutral wording (events/intents, persisted form state, server round-trip).
+- Domain-generic component names (e.g., appointmentsGrid).
+
+INPUT (BATCH JSON) — paste below this line:
+---BEGIN BATCH JSON---
+{
+  "foundAt": ".",
+  "index": 41,
+  "totalBatches": 42,
+  "range": {
+    "start": 1600,
+    "count": 40
+  },
+  "artifacts": [
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\Supplemental\\WindowMonthCalendar.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 12,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\Supplemental\\WindowMonthCalendar.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 138,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\UserControls\\CtrlEFormFill.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 24,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\UserControls\\CtrlEFormFill.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 2907,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\Button.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 37,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\Button.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 415,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\CheckBox.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 30,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\CheckBox.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 295,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\ComboBox.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 26,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\ComboBox.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 1059,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\ComboClinic.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 26,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\ComboClinic.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 627,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\DatePicker.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 30,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\DatePicker.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 358,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\Grid.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 61,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\Grid.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 2818,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\Label.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 26,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\Label.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 227,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\LinkLabel.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 20,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\LinkLabel.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 156,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\ListBox.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 22,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\ListBox.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 1328,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\ListView.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 22,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\ListView.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 170,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\Menu.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 25,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\Menu.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 214,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\MonthCalendar.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 79,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\MonthCalendar.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 581,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\PictureBox.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 19,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\PictureBox.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 137,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\RadioButton.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 30,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\RadioButton.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 243,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\SignatureBoxWrapper.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 27,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\SignatureBoxWrapper.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 119,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\TestContr.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 18,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\TestContr.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 97,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\TextBox.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 26,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\TextBox.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 410,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\TextPassword.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 24,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\TextPassword.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 276,
+        "eventHandlers": 0
+      }
+    }
+  ]
+}
+---END BATCH JSON---
+
+TASK:
+For EACH artifact in `artifacts[]`, analyze the referenced files (markup, code-behind, controller, view, designer, etc.) available in the workspace and produce a clean-room spec.
+
+OUTPUT:
+Return JSON ONLY with this shape:
+{
+  "batch": { "index": 41, "totalBatches": 42, "artifacts": 40 },
+  "specs": [
+    {
+      "source": {
+        "sourceType": "WinForms | WPF | ASPX | MVC | RazorPages | BlazorServer | BlazorWasm | UWP | WinUI | XamarinForms | MAUI | AngularJS | Knockout | Silverlight | Other",
+        "qualifiedName": "TypeNameOrRoute (omit private/internal identifiers if not public)",
+        "project": "ProjectName",
+        "files": [{"path": "relative/or/absolute/path", "role": "markup|codeBehind|controller|view|designer|viewModel|other"}],
+        "metrics": { "approxLines": 0, "eventHandlers": 0 }
+      },
+      "route": { "pattern": "/entity/{id}/edit", "params": [], "queryParams": [] },
+      "entities": {},
+      "form": { "fields": [], "lookups": {}, "validation": { "rules": [] } },
+      "grids": [],
+      "intents": [],
+      "api": [],
+      "navigation": { "linksOut": [], "breadcrumbs": [] },
+      "auth": { "requiresAuth": true, "roles": [], "claims": [], "sensitiveFields": [] },
+      "platform": { "desktopOnly": [], "webAlternatives": {} },
+      "sideEffects": [],
+      "risks": [],
+      "uxNotes": []
+    }
+  ]
+}
+
+RULES:
+- ONE valid JSON object only, no comments/prose.
+- If unknown, emit empty arrays/objects (not null).
+- Do not exceed 40 artifacts per response; process the full batch as provided here (already constrained).

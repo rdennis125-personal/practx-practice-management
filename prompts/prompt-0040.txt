@@ -1,0 +1,705 @@
+You are generating a SINGLE consolidated behavioral specification for a batch of legacy UI artifacts (part of a larger solution) to migrate to React + TypeScript.
+
+CLEAN-ROOM & LICENSE RULES (MANDATORY):
+- Behavioral spec only. No source code, no pseudo-code, no decompiled content.
+- Avoid private/internal identifiers; keep only business-level field names and public routes/contracts.
+- Describe validation in words/JSON rules (e.g., “email format”, “YYYY-MM-DD”).
+- If proprietary or ambiguous logic is suspected, record in "risks" with "proprietaryAlgorithmSuspected".
+- In business/UX naming ONLY (entities, labels, route examples, UX notes), replace “OpenDental” (and “Open Dental”) with “PractX”. Do NOT change file paths in source.files.
+
+NORMALIZATION:
+- lowerCamelCase for field and intent names.
+- Framework-neutral wording (events/intents, persisted form state, server round-trip).
+- Domain-generic component names (e.g., appointmentsGrid).
+
+INPUT (BATCH JSON) — paste below this line:
+---BEGIN BATCH JSON---
+{
+  "foundAt": ".",
+  "index": 40,
+  "totalBatches": 42,
+  "range": {
+    "start": 1560,
+    "count": 40
+  },
+  "artifacts": [
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmWikiListAdvancedSearch.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 69,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmWikiRename.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 16,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmWikiRename.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 89,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmWikiSetup.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 18,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmWikiSetup.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 58,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmWikiTableHeaders.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 15,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmWikiTableHeaders.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 80,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmZipCodeEdit.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 21,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmZipCodeEdit.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 124,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmZipCodes.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 16,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmZipCodes.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 134,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmZipSelect.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 19,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmZipSelect.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 153,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmZoom.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 50,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmZoom.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 248,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\Frm_BasicTemplate.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 18,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\Frm_BasicTemplate.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 33,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\InputBox.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 16,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\InputBox.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 635,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\InternalTools\\Job Manager\\FrmJobGitBranch.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 23,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\InternalTools\\Job Manager\\FrmJobGitBranch.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 82,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Properties\\Resources.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 153,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Properties\\Settings.Designer.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 26,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Themes\\DataGridDict.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 143,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Themes\\Generic.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 74,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Themes\\TabControlDict.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 196,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\ImagingModule\\ImageDockHeader.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 46,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\ImagingModule\\ImageDockHeader.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 317,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\ImagingModule\\ImageSelector.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 29,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\ImagingModule\\ImageSelector.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 1431,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\ImagingModule\\UnmountedBar.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 34,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\ImagingModule\\UnmountedBar.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 228,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\ImagingModule\\WindowImageFloatWindows.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 19,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\ImagingModule\\WindowImageFloatWindows.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 515,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\ImagingModule\\WindowingSlider.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 33,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\ImagingModule\\WindowingSlider.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 372,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\ImagingModule\\ZoomSlider.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 44,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\ImagingModule\\ZoomSlider.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 620,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\Supplemental\\WindowComboPicker.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 15,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\UI\\Controls\\Supplemental\\WindowComboPicker.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 509,
+        "eventHandlers": 0
+      }
+    }
+  ]
+}
+---END BATCH JSON---
+
+TASK:
+For EACH artifact in `artifacts[]`, analyze the referenced files (markup, code-behind, controller, view, designer, etc.) available in the workspace and produce a clean-room spec.
+
+OUTPUT:
+Return JSON ONLY with this shape:
+{
+  "batch": { "index": 40, "totalBatches": 42, "artifacts": 40 },
+  "specs": [
+    {
+      "source": {
+        "sourceType": "WinForms | WPF | ASPX | MVC | RazorPages | BlazorServer | BlazorWasm | UWP | WinUI | XamarinForms | MAUI | AngularJS | Knockout | Silverlight | Other",
+        "qualifiedName": "TypeNameOrRoute (omit private/internal identifiers if not public)",
+        "project": "ProjectName",
+        "files": [{"path": "relative/or/absolute/path", "role": "markup|codeBehind|controller|view|designer|viewModel|other"}],
+        "metrics": { "approxLines": 0, "eventHandlers": 0 }
+      },
+      "route": { "pattern": "/entity/{id}/edit", "params": [], "queryParams": [] },
+      "entities": {},
+      "form": { "fields": [], "lookups": {}, "validation": { "rules": [] } },
+      "grids": [],
+      "intents": [],
+      "api": [],
+      "navigation": { "linksOut": [], "breadcrumbs": [] },
+      "auth": { "requiresAuth": true, "roles": [], "claims": [], "sensitiveFields": [] },
+      "platform": { "desktopOnly": [], "webAlternatives": {} },
+      "sideEffects": [],
+      "risks": [],
+      "uxNotes": []
+    }
+  ]
+}
+
+RULES:
+- ONE valid JSON object only, no comments/prose.
+- If unknown, emit empty arrays/objects (not null).
+- Do not exceed 40 artifacts per response; process the full batch as provided here (already constrained).

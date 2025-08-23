@@ -1,0 +1,651 @@
+{
+  "foundAt": ".",
+  "index": 34,
+  "totalBatches": 42,
+  "range": {
+    "start": 1320,
+    "count": 40
+  },
+  "artifacts": [
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmBadgeEdit.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 46,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmBencoSetup.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 26,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmBencoSetup.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 101,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmChildCareMap.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 59,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmChildCareMap.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 880,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmChildCheckIn.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 22,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmChildCheckIn.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 187,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmChildCheckInBadge.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 17,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmChildCheckInBadge.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 113,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmChildEdit.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 31,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmChildEdit.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 119,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmChildMapLog.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 21,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmChildMapLog.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 129,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmChildParentEdit.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 21,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmChildParentEdit.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 47,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmChildParentLinkEdit.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 22,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmChildParentLinkEdit.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 76,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmChildParents.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 17,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmChildParents.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 107,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmChildren.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 17,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmChildren.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 137,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmChildRoomEdit.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 22,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmChildRoomEdit.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 102,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmChildRoomLogEdit.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 37,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmChildRoomLogEdit.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 185,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmChildRoomLogs.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 20,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmChildRoomLogs.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 235,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmChildRooms.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 15,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmChildRooms.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 79,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmChildTeacherSelect.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 15,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmChildTeacherSelect.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 75,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmCommItem.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 45,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmCommItem.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 544,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmCommItemHistory.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 16,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmCommItemHistory.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 75,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmCommItemUserPrefs.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 17,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmCommItemUserPrefs.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 98,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmCommReferral.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 26,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "Other",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmCommReferral.xaml.cs",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 80,
+        "eventHandlers": 0
+      }
+    },
+    {
+      "sourceType": "WPF",
+      "qualifiedName": "",
+      "project": "",
+      "files": [
+        {
+          "path": "WpfControlsOD\\Frms\\FrmCountyEdit.xaml",
+          "role": "unknown"
+        }
+      ],
+      "hints": [],
+      "metrics": {
+        "approxLines": 18,
+        "eventHandlers": 0
+      }
+    }
+  ]
+}
