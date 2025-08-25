@@ -1,0 +1,1308 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Practice Management API",
+    "version": "1.0.0"
+  },
+  "tags": [
+    {
+      "name": "Education"
+    },
+    {
+      "name": "Clinical"
+    },
+    {
+      "name": "Patients"
+    }
+  ],
+  "paths": {
+    "/api/school-classes/{id}": {
+      "get": {
+        "summary": "Retrieve a school class",
+        "tags": [
+          "Education",
+          "interface"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Class retrieved",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SchoolClass"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "Update a school class",
+        "tags": [
+          "Education",
+          "interface"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SchoolClassUpdate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Class updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SchoolClass"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Remove a school class",
+        "tags": [
+          "Education",
+          "interface"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Class deleted"
+          }
+        }
+      }
+    },
+    "/api/requirements/{id}": {
+      "get": {
+        "summary": "Retrieve a requirement",
+        "tags": [
+          "Education",
+          "interface"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Requirement retrieved",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Requirement"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "Update a requirement",
+        "tags": [
+          "Education",
+          "interface"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RequirementUpdate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Requirement updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Requirement"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Remove a requirement",
+        "tags": [
+          "Education",
+          "interface"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Requirement deleted"
+          }
+        }
+      }
+    },
+    "/api/providers": {
+      "get": {
+        "summary": "List providers",
+        "tags": [
+          "Clinical",
+          "interface"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Providers listed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Provider"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/disp-supplies": {
+      "get": {
+        "summary": "List dispensary supplies for a provider",
+        "tags": [
+          "Clinical",
+          "interface"
+        ],
+        "parameters": [
+          {
+            "name": "provNum",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Supplies listed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DispenseSupply"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/clinics": {
+      "get": {
+        "summary": "List clinics",
+        "tags": [
+          "Clinical",
+          "interface"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Clinics listed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Clinic"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/web-sched-carrier-rules": {
+      "get": {
+        "summary": "List web scheduling carrier rules for a clinic",
+        "tags": [
+          "Clinical",
+          "interface"
+        ],
+        "parameters": [
+          {
+            "name": "clinicNum",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Rules listed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WebSchedCarrierRule"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/web-sched-carrier-rules/copy": {
+      "post": {
+        "summary": "Copy carrier rules from one clinic to others",
+        "tags": [
+          "Clinical",
+          "interface"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CopyCarrierRules"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Rules copied"
+          }
+        }
+      }
+    },
+    "/api/ins-bluebook-rules": {
+      "get": {
+        "summary": "List insurance blue book rules",
+        "tags": [
+          "Clinical",
+          "interface"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Rules listed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/InsuranceBlueBookRule"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ins-bluebook-rules/{id}": {
+      "put": {
+        "summary": "Update an insurance blue book rule",
+        "tags": [
+          "Clinical",
+          "interface"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InsuranceBlueBookRuleUpdate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Rule updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InsuranceBlueBookRule"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/rx-defs": {
+      "get": {
+        "summary": "List prescription templates",
+        "tags": [
+          "Clinical",
+          "interface"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Templates listed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PrescriptionTemplate"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a prescription template",
+        "tags": [
+          "Clinical",
+          "interface"
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PrescriptionTemplateCreate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Template created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PrescriptionTemplate"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/rx-defs/{id}": {
+      "put": {
+        "summary": "Update a prescription template",
+        "tags": [
+          "Clinical",
+          "interface"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PrescriptionTemplateUpdate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Template updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PrescriptionTemplate"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Remove a prescription template",
+        "tags": [
+          "Clinical",
+          "interface"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Template removed"
+          }
+        }
+      }
+    },
+    "/api/ins-benefit-notes/{id}": {
+      "get": {
+        "summary": "Retrieve insurance benefit notes",
+        "tags": [
+          "Clinical",
+          "interface"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Notes retrieved",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InsuranceBenefitNotes"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "Update insurance benefit notes",
+        "tags": [
+          "Clinical",
+          "interface"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InsuranceBenefitNotesUpdate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Notes updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InsuranceBenefitNotes"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/appt-views/{id}": {
+      "get": {
+        "summary": "Retrieve an appointment view",
+        "tags": [
+          "Clinical",
+          "interface"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "View retrieved",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppointmentView"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "Update an appointment view",
+        "tags": [
+          "Clinical",
+          "interface"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AppointmentViewUpdate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "View updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AppointmentView"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Remove an appointment view",
+        "tags": [
+          "Clinical",
+          "interface"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "View deleted"
+          }
+        }
+      }
+    },
+    "/api/patients/{id}": {
+      "get": {
+        "summary": "Retrieve a patient",
+        "tags": [
+          "Patients",
+          "interface"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Patient retrieved",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Patient"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/patients/{id}/email": {
+      "put": {
+        "summary": "Update a patient's email",
+        "tags": [
+          "Patients",
+          "interface"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PatientEmailUpdate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Email updated"
+          }
+        }
+      }
+    },
+    "/api/patients/{id}/forms": {
+      "get": {
+        "summary": "List forms for a patient",
+        "tags": [
+          "Patients",
+          "interface"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Forms listed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/PatientForm"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Add a patient form",
+        "tags": [
+          "Patients",
+          "interface"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PatientFormCreate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Form added",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PatientForm"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "SchoolClass": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "graduationYear": {
+            "type": "integer"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "graduationYear"
+        ]
+      },
+      "SchoolClassUpdate": {
+        "type": "object",
+        "properties": {
+          "graduationYear": {
+            "type": "integer"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "graduationYear"
+        ]
+      },
+      "Requirement": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "description"
+        ]
+      },
+      "RequirementUpdate": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "description"
+        ]
+      },
+      "Provider": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "firstName": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "lastName",
+          "firstName"
+        ]
+      },
+      "DispenseSupply": {
+        "type": "object",
+        "properties": {
+          "dateDispensed": {
+            "type": "string",
+            "format": "date"
+          },
+          "description": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "integer"
+          },
+          "note": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "dateDispensed",
+          "description",
+          "quantity"
+        ]
+      },
+      "Clinic": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "abbreviation": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "abbreviation"
+        ]
+      },
+      "WebSchedCarrierRule": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "carrierName": {
+            "type": "string"
+          },
+          "displayName": {
+            "type": "string"
+          },
+          "rule": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "carrierName",
+          "displayName",
+          "rule"
+        ]
+      },
+      "CopyCarrierRules": {
+        "type": "object",
+        "properties": {
+          "fromClinicId": {
+            "type": "integer"
+          },
+          "toClinicIds": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "overrideExisting": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "fromClinicId",
+          "toClinicIds"
+        ]
+      },
+      "InsuranceBlueBookRule": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "ruleType": {
+            "type": "string"
+          },
+          "matching": {
+            "type": "string"
+          },
+          "limitType": {
+            "type": "string"
+          },
+          "limitValue": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "ruleType"
+        ]
+      },
+      "InsuranceBlueBookRuleUpdate": {
+        "type": "object",
+        "properties": {
+          "ruleType": {
+            "type": "string"
+          },
+          "matching": {
+            "type": "string"
+          },
+          "limitType": {
+            "type": "string"
+          },
+          "limitValue": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "ruleType"
+        ]
+      },
+      "PrescriptionTemplate": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "drug": {
+            "type": "string"
+          },
+          "isControlled": {
+            "type": "boolean"
+          },
+          "directions": {
+            "type": "string"
+          },
+          "dispenseAmount": {
+            "type": "string"
+          },
+          "refills": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "drug"
+        ]
+      },
+      "PrescriptionTemplateCreate": {
+        "type": "object",
+        "properties": {
+          "drug": {
+            "type": "string"
+          },
+          "isControlled": {
+            "type": "boolean"
+          },
+          "directions": {
+            "type": "string"
+          },
+          "dispenseAmount": {
+            "type": "string"
+          },
+          "refills": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "drug"
+        ]
+      },
+      "PrescriptionTemplateUpdate": {
+        "type": "object",
+        "properties": {
+          "drug": {
+            "type": "string"
+          },
+          "isControlled": {
+            "type": "boolean"
+          },
+          "directions": {
+            "type": "string"
+          },
+          "dispenseAmount": {
+            "type": "string"
+          },
+          "refills": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "drug"
+        ]
+      },
+      "InsuranceBenefitNotes": {
+        "type": "object",
+        "properties": {
+          "benefitNotes": {
+            "type": "string"
+          }
+        }
+      },
+      "InsuranceBenefitNotesUpdate": {
+        "type": "object",
+        "properties": {
+          "benefitNotes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "benefitNotes"
+        ]
+      },
+      "AppointmentView": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "description": {
+            "type": "string"
+          },
+          "rowsPerIncrement": {
+            "type": "integer"
+          },
+          "minOperatoryWidth": {
+            "type": "integer"
+          },
+          "scrollStartTime": {
+            "type": "string"
+          },
+          "dynamicScroll": {
+            "type": "boolean"
+          },
+          "disableAppointmentBubbles": {
+            "type": "boolean"
+          },
+          "onlyScheduledProviders": {
+            "type": "boolean"
+          },
+          "onlyScheduledProviderDays": {
+            "type": "boolean"
+          },
+          "onlyScheduleBeforeTime": {
+            "type": "string"
+          },
+          "onlyScheduleAfterTime": {
+            "type": "string"
+          },
+          "clinicId": {
+            "type": "integer"
+          },
+          "waitingRoomName": {
+            "type": "string"
+          },
+          "stackBehaviorUpperRight": {
+            "type": "string"
+          },
+          "stackBehaviorLowerRight": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "description"
+        ]
+      },
+      "AppointmentViewUpdate": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "rowsPerIncrement": {
+            "type": "integer"
+          },
+          "minOperatoryWidth": {
+            "type": "integer"
+          },
+          "scrollStartTime": {
+            "type": "string"
+          },
+          "dynamicScroll": {
+            "type": "boolean"
+          },
+          "disableAppointmentBubbles": {
+            "type": "boolean"
+          },
+          "onlyScheduledProviders": {
+            "type": "boolean"
+          },
+          "onlyScheduledProviderDays": {
+            "type": "boolean"
+          },
+          "onlyScheduleBeforeTime": {
+            "type": "string"
+          },
+          "onlyScheduleAfterTime": {
+            "type": "string"
+          },
+          "clinicId": {
+            "type": "integer"
+          },
+          "waitingRoomName": {
+            "type": "string"
+          },
+          "stackBehaviorUpperRight": {
+            "type": "string"
+          },
+          "stackBehaviorLowerRight": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "description"
+        ]
+      },
+      "Patient": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "email": {
+            "type": "string",
+            "format": "email"
+          }
+        },
+        "required": [
+          "id",
+          "email"
+        ]
+      },
+      "PatientEmailUpdate": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "format": "email"
+          }
+        },
+        "required": [
+          "email"
+        ]
+      },
+      "PatientForm": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "type": {
+            "type": "string"
+          },
+          "dateTime": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "type",
+          "dateTime"
+        ]
+      },
+      "PatientFormCreate": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "type"
+        ]
+      }
+    }
+  }
+}
