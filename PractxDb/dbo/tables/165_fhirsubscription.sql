@@ -1,0 +1,12 @@
+CREATE TABLE [fhirsubscription] ( [FHIRSubscriptionNum] bigint NOT NULL IDENTITY(1,1),
+[Criteria] varchar(255) NOT NULL,
+[Reason] varchar(255) NOT NULL,
+[SubStatus] tinyint NOT NULL,
+[ErrorNote] text NOT NULL,
+[ChannelType] tinyint NOT NULL,
+[ChannelEndpoint] varchar(255) NOT NULL,
+[ChannelPayLoad] varchar(255) NOT NULL,
+[ChannelHeader] varchar(255) NOT NULL,
+[DateEnd] datetime NOT NULL DEFAULT '0001-01-01 00:00:00',
+[APIKeyHash] varchar(255) NOT NULL,
+CONSTRAINT PK_FHIRSubscriptionNum PRIMARY KEY ([FHIRSubscriptionNum]) );
