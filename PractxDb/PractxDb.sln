@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36408.4
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "practxdb", "practxdb.sqlproj", "{EFD410C1-AF21-40D1-B3C1-35FDC1E796C9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EFD410C1-AF21-40D1-B3C1-35FDC1E796C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFD410C1-AF21-40D1-B3C1-35FDC1E796C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFD410C1-AF21-40D1-B3C1-35FDC1E796C9}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{EFD410C1-AF21-40D1-B3C1-35FDC1E796C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFD410C1-AF21-40D1-B3C1-35FDC1E796C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFD410C1-AF21-40D1-B3C1-35FDC1E796C9}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {985A4AD9-C354-4BD0-A45C-4BC6B758E848}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,11 @@
+CREATE TABLE [icd9] ( [ICD9Num] bigint NOT NULL IDENTITY(1,1),
+[ICD9Code] varchar(255) NOT NULL,
+[Description] varchar(255) NOT NULL,
+[DateTStamp] timestamp NOT NULL DEFAULT GETDATE(),-- ON UPDATE GETDATE(),
+CONSTRAINT PK_ICD9Num PRIMARY KEY ([ICD9Num])
+);
+
+GO
+CREATE NONCLUSTERED INDEX [IX_ICD9Code] ON [icd9] ([ICD9Code]);
+
+--DBCC CHECKIDENT ('tablename', RESEED, 15652);

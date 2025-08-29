@@ -1,0 +1,10 @@
+CREATE TABLE [eservicesignal] ( [EServiceSignalNum] bigint NOT NULL IDENTITY(1,1),
+[ServiceCode] int NOT NULL,
+[ReasonCategory] int NOT NULL,
+[ReasonCode] int NOT NULL,
+[Severity] tinyint NOT NULL,
+[Description] text NOT NULL,
+[SigDateTime] datetime NOT NULL DEFAULT '0001-01-01 00:00:00',
+[Tag] text NOT NULL,
+[IsProcessed] tinyint NOT NULL,
+CONSTRAINT PK_EServiceSignalNum PRIMARY KEY ([EServiceSignalNum]) );
